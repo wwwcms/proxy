@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "PORT=3001 nitropack dev",
+    "build": "nitropack build"
+  },
+  "devDependencies": {
+    "ipx": "^1.0.1",
+    "nitropack": "^2.2.3",
+    "ofetch": "^1.0.1",
+    "typescript": "^4.9.5"
+  }
+}

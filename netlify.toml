@@ -1,7 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self' app.netlify.com fanzu-proxy.netlify.app; style-src 'self' app.netlify.com fanzu-proxy.netlify.app; form-action 'self' app.netlify.com fanzu-proxy.netlify.app; script-src 'self' app.netlify.com fanzu-proxy.netlify.app; connect-src 'self' app.netlify.com fanzu-proxy.netlify.app; img-src 'self' app.netlify.com fanzu-proxy.netlify.app; base-uri 'self' app.netlify.com fanzu-proxy.netlify.app;"
+    Content-Security-Policy = "default-src 'self' fanzu-proxy.netlify.app *.netlify.app; frame-ancestors 'self'; form-action 'self'"

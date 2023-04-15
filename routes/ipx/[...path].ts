@@ -10,6 +10,11 @@ const ipx = createIPX({
     'image.tmdb.org',
     'img.youtube.com',
   ],
+  fetchOptions: {
+    headers: {
+      "Content-Security-Policy": "default-src 'self' app.netlify.com; child-src 'self' app.netlify.com; script-src 'self' app.netlify.com netlify-cdp-loader.netlify.app;"
+    }
+  }
 })
 
 const ipxMiddleware = createIPXMiddleware(ipx)

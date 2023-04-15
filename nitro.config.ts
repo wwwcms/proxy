@@ -7,7 +7,7 @@ export default defineNitroConfig({
   },
   runtimeConfig: {
     tmdb: {
-      apiKey: process.env.TMDB_API_KEY || '',
+      apiKey: 'cc06d337ffde84712a0fe317144d2592',
     },
   },
 })

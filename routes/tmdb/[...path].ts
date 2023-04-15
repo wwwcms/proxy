@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
       baseURL: TMDB_API_URL,
       params: {
         api_key: config.tmdb.apiKey,
-        language: 'en-US',
+        language: 'zh-CN',
         ...query,
       },
     })

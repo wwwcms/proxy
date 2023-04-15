@@ -3,7 +3,7 @@ import { getQuery } from 'ufo'
 
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: { req: { url: string }; context: { params: { path: RequestInfo } }; res: { statusCode: any } }) => {
   const query = getQuery(event.req.url!)
   // eslint-disable-next-line no-console
   console.log(

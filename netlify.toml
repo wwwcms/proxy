@@ -1,7 +1,4 @@
 [[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "*"
-    Access-Control-Allow-Headers = "*"
-    Access-Control-Max-Age = "0"
+   for = "/*"
+   [headers.values]
+      Access-Control-Allow-Origin = "*"

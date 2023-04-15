@@ -1,4 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self' fanzu-proxy.netlify.app *.netlify.app; frame-ancestors 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';base-uri 'self';form-action 'self';"

@@ -6,12 +6,12 @@ export default defineEventHandler(async (event) => {
   if (!config.tmdb.apiKey)
     throw new Error('TMDB API key is not set')
   try {
+    const params = query.lang ? query : { ...query, language: 'zh-CN' }
     return await $fetch(event.context.params!.path, {
       baseURL: TMDB_API_URL,
       params: {
         api_key: config.tmdb.apiKey,
-        language: query.lang || 'zh-CN',
-        ...query,
+        ...params,
       },
       headers: {
         Accept: 'application/json',

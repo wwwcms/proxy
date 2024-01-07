@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "PORT=3001 nitropack dev",
+    "dev": "nitropack dev",
     "prepare": "nitropack prepare",
     "build": "nitropack build"
   },

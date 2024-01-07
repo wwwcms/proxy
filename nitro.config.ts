@@ -1,15 +1,13 @@
-import process from 'node:process'
 import { defineNitroConfig } from 'nitropack/config'
 
 export default defineNitroConfig({
   routeRules: {
     '/**': { cors: true },
-    // TODO: enable when Nitro on Vercel missing query bug is fixed
     // '/tmdb/**': { swr: true },
   },
   runtimeConfig: {
     tmdb: {
-      apiKey: process.env.TMDB_API_KEY || '',
+      apiKey: 'cc06d337ffde84712a0fe317144d2592',
     },
   },
 })

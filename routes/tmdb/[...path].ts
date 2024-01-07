@@ -2,15 +2,6 @@ const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
-  // eslint-disable-next-line no-console
-  console.log(
-    'Fetching TMDB API',
-    {
-      url: getRequestURL(event).href,
-      query,
-      params: event.context.params,
-    },
-  )
   const config = useRuntimeConfig()
   if (!config.tmdb.apiKey)
     throw new Error('TMDB API key is not set')
@@ -18,7 +9,7 @@ export default defineEventHandler(async (event) => {
     return await $fetch(event.context.params!.path, {
       baseURL: TMDB_API_URL,
       params: {
-        api_key: 'cc06d337ffde84712a0fe317144d2592',
+        api_key: config.tmdb.apiKey,
         language: query.lang || 'zh-CN',
         ...query,
       },

@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
     return await $fetch(event.context.params!.path, {
       baseURL: TMDB_API_URL,
       params: {
-        api_key: config.tmdb.apiKey,
+        api_key: 'cc06d337ffde84712a0fe317144d2592',
         language: query.lang || 'zh-CN',
         ...query,
       },

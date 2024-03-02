@@ -14,7 +14,7 @@ Proxy hosts is a lightweight proxy server for the tmdb api and youtube images.
 3. Enter the details into the `.env` file
 4. Start the dev server with the following scripts
 
-``` bash
+```bash
 # Enable pnpm
 $ corepack enable
 

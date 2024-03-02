@@ -1,6 +1,6 @@
 const TMDB_API_URL = 'https://api.themoviedb.org/3'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async event => {
   const query = getQuery(event)
   const config = useRuntimeConfig()
   if (!config.tmdb.apiKey)
@@ -11,18 +11,18 @@ export default defineEventHandler(async (event) => {
       baseURL: TMDB_API_URL,
       params: {
         api_key: config.tmdb.apiKey,
-        ...params,
+        ...params
       },
       headers: {
-        Accept: 'application/json',
-      },
+        Accept: 'application/json'
+      }
     })
   }
   catch (e: any) {
     const status = e?.response?.status || 500
     setResponseStatus(event, status)
     return {
-      error: String(e)?.replace(config.tmdb.apiKey, '***'),
+      error: String(e)?.replace(config.tmdb.apiKey, '***')
     }
   }
 })

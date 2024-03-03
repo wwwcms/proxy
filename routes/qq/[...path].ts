@@ -11,7 +11,7 @@ export default defineEventHandler(async event => {
       .replace('),"tabs":', ',"tabs":')
       .replace(/undefined/g, '0')) || {}
     const { listData, currentEpTabIndex } = allData
-    const tabs = listData?.[0]?.tabs
+    const tabs = listData?.[currentEpTabIndex]?.tabs
     const video_ids = coverInfo?.video_ids || []
     const result: any = []
     tabs?.forEach((item: any) => {
@@ -26,7 +26,8 @@ export default defineEventHandler(async event => {
     if (result.length) {
       const datas = await Promise.all(result)
       datas.forEach((item, index) => {
-        const { listData }
+        try {
+          const { listData }
         = JSON.parse(
           item
             .match(/"episodeMain":([\s\S]+),"episodeRecommendShort":/)[1]
@@ -35,16 +36,25 @@ export default defineEventHandler(async event => {
             .replace('),"tabs":', ',"tabs":')
             .replace(/undefined/g, '0')
         ) || {}
-        data = [...data, ...listData?.[currentEpTabIndex]?.list?.[index + 1]]
+          data = [...data, ...listData?.[currentEpTabIndex]?.list?.[index + 1]]
+        }
+        catch (error) {
+          console.log(error)
+        }
       })
     }
     const tag = { 2: '免费', 4: '预告', 7: '会员' }
     const html: string[] = []
     data.forEach(({ imgTag, title, vid, videoSubtitle }, index) => {
-      if (videoSubtitle !== '预告片') {
-        const isbr = index > data.length - 2
-        const type = imgTag === 0 ? 2 : imgTag.includes('VIP') ? 7 : 4
-        html.push(`第${title}话${videoSubtitle ? ` ${videoSubtitle}` : ''}$//v.qq.com/x/cover/${id}/${vid}.html${vip ? `$${tag[type]}` : ''}${isbr ? '' : '\n'}`)
+      try {
+        if (imgTag === 0 || (imgTag && !imgTag.includes('预'))) {
+          const isbr = index > data.length - 2
+          const type = imgTag === 0 ? 2 : imgTag.includes('VIP') ? 7 : 4
+          html.push(`第${title}话${videoSubtitle ? ` ${videoSubtitle}` : ''}$//v.qq.com/x/cover/${id}/${vid}.html${vip ? `$${tag[type]}` : ''}${isbr ? '' : '\n'}`)
+        }
+      }
+      catch (error) {
+        console.log(error)
       }
     })
     return html

@@ -1,10 +1,12 @@
 export default defineEventHandler(async event => {
+  const query = getQuery(event)
   try {
     const { path: id } = event.context.params || {}
+    const vip = query.vip
     const response: any = await $fetch(`https://v.qq.com/x/cover/${id}.html`)
     const { coverInfo } = JSON.parse(response.match(/"global":([\s\S]+),"episodeClips":/)[1]) || {}
     const allData = JSON.parse(response.match(/"episodeMain":([\s\S]+),"episodeRecommendShort":/)[1]
-      .replace('Array.prototype.slice.call(', '')
+      .replace(/Array.prototype.slice.call\(/g, '')
       .replace('),"listMeta":[]', ',"listMeta":[]')
       .replace('),"tabs":', ',"tabs":')
       .replace(/undefined/g, '0')) || {}
@@ -28,7 +30,7 @@ export default defineEventHandler(async event => {
         = JSON.parse(
           item
             .match(/"episodeMain":([\s\S]+),"episodeRecommendShort":/)[1]
-            .replace('Array.prototype.slice.call(', '')
+            .replace(/Array.prototype.slice.call\(/g, '')
             .replace('),"listMeta":[]', ',"listMeta":[]')
             .replace('),"tabs":', ',"tabs":')
             .replace(/undefined/g, '0')
@@ -36,14 +38,13 @@ export default defineEventHandler(async event => {
         data = [...data, ...listData?.[currentEpTabIndex]?.list?.[index + 1]]
       })
     }
-    console.log(data, 'data')
     const tag = { 2: '免费', 4: '预告', 7: '会员' }
     const html: string[] = []
     data.forEach(({ imgTag, title, vid, videoSubtitle }, index) => {
       if (videoSubtitle !== '预告片') {
         const isbr = index > data.length - 2
-        const vip = imgTag === 0 ? 2 : imgTag.includes('VIP') ? 7 : 4
-        html.push(`第${title}话${videoSubtitle ? ` ${videoSubtitle}` : ''}$//v.qq.com/x/cover/${id}/${vid}.html$${tag[vip]}${isbr ? '' : '\n'}`)
+        const type = imgTag === 0 ? 2 : imgTag.includes('VIP') ? 7 : 4
+        html.push(`第${title}话${videoSubtitle ? ` ${videoSubtitle}` : ''}$//v.qq.com/x/cover/${id}/${vid}.html$${vip ? tag[type] : ''}${isbr ? '' : '\n'}`)
       }
     })
     return html

@@ -4,6 +4,7 @@ export default defineEventHandler(async event => {
     const { path: id } = event.context.params || {}
     let seasonid = query.seasonid
     const type = query.type
+    const vip = query.vip
     if (id) {
       const ids = id.split('md')[1] || id
       const response: any = await $fetch(`https://api.bilibili.com/pgc/review/user?media_id=${ids}`)
@@ -17,7 +18,7 @@ export default defineEventHandler(async event => {
       if (type === 'ep')
         return `第${title}话@@${long_title}@@暂无内容${isbr ? '' : '||\n'}`
 
-      return `第${title}话${long_title ? ` ${long_title}$` : '$'}${share_url.replace('http:', '')}$${tag[status]}${isbr ? '' : '\n'}`
+      return `第${title}话${long_title ? ` ${long_title}$` : '$'}${share_url.replace('http:', '')}$${vip ? tag[status] : ''}${isbr ? '' : '\n'}`
     })
 
     return html

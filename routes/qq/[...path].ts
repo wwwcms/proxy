@@ -44,7 +44,7 @@ export default defineEventHandler(async event => {
       if (videoSubtitle !== '预告片') {
         const isbr = index > data.length - 2
         const type = imgTag === 0 ? 2 : imgTag.includes('VIP') ? 7 : 4
-        html.push(`第${title}话${videoSubtitle ? ` ${videoSubtitle}` : ''}$//v.qq.com/x/cover/${id}/${vid}.html$${vip ? tag[type] : ''}${isbr ? '' : '\n'}`)
+        html.push(`第${title}话${videoSubtitle ? ` ${videoSubtitle}` : ''}$//v.qq.com/x/cover/${id}/${vid}.html${vip ? `$${tag[type]}` : ''}${isbr ? '' : '\n'}`)
       }
     })
     return html

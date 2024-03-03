@@ -18,7 +18,7 @@ export default defineEventHandler(async event => {
       if (type === 'ep')
         return `第${title}话@@${long_title}@@暂无内容${isbr ? '' : '||\n'}`
 
-      return `第${title}话${long_title ? ` ${long_title}$` : '$'}${share_url.replace('http:', '')}$${vip ? tag[status] : ''}${isbr ? '' : '\n'}`
+      return `第${title}话${long_title ? ` ${long_title}$` : '$'}${share_url.replace('http:', '')}${vip ? `$${tag[status]}` : ''}${isbr ? '' : '\n'}`
     })
 
     return html

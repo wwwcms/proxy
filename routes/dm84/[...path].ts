@@ -1,6 +1,7 @@
 import { load } from 'cheerio'
 
 export default defineEventHandler(async event => {
+  const query = getQuery(event)
   try {
     const { path: id } = event.context.params || {}
     try {
@@ -30,7 +31,7 @@ export default defineEventHandler(async event => {
         return prev
       }, {})
       const play = Object.keys(playArr).map(item => {
-        return playArr[item].reverse()
+        return query.sort ? playArr[item] : playArr[item].reverse()
       })
 
       return play

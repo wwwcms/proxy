@@ -12,6 +12,8 @@ export default defineEventHandler(async event => {
     }
     const response: any = await $fetch(`https://www.acgfans.org/cj.php?type=${type}&vid=${id}`)
 
+    console.log(response, 'sss', `https://www.acgfans.org/cj.php?type=${type}&vid=${id}`)
+
     // const { episodes = [] } = response.result.main_section
     // const tag = { 2: '免费', 13: '会员', 8: '付费' } as any
     // const html = episodes.map(({ title, long_title, share_url, status }: any) => {

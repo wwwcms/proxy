@@ -41,7 +41,7 @@ export default defineEventHandler(async event => {
         const $ = load(html)
         const src = $('#fed-play-iframe').attr('src')
         const h = src?.split('url=')
-        play.push(`第${n}集$${h?.[1]}`)
+        play.push(`第${n}集$${h?.[1]}\n`)
       }
 
       await page.close()

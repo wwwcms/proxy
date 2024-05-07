@@ -1,4 +1,5 @@
 import https from 'node:https'
+import http from 'node:http'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -7,6 +8,25 @@ export default defineEventHandler(async event => {
   const getUrl = (path: string) => {
     return new Promise<string>((resolve, reject) => {
       https.get(path, res => {
+        let data = ''
+
+        res.on('data', chunk => {
+          data += chunk
+        })
+
+        res.on('end', () => {
+          resolve(data)
+        })
+      }).on('error', err => {
+        console.log(`Error: ${err.message}`)
+        reject(err)
+      })
+    })
+  }
+
+  const getUrlHttp = (path: string) => {
+    return new Promise<string>((resolve, reject) => {
+      http.get(path, res => {
         let data = ''
 
         res.on('data', chunk => {
@@ -60,9 +80,10 @@ export default defineEventHandler(async event => {
   }
 
   try {
-    const { path: http } = event.context.params || {}
+    const { path: m3u8url } = event.context.params || {}
+    const http = await getUrlHttp(decodeURIComponent(m3u8url))
     const data = await getUrl(http)
-    if (data) {
+    if (data && http.includes('index.m3u8')) {
       const ids = http.split('index.m3u8')
       const datas = data.split('\n').filter(item => item.includes('.m3u8'))
       const url = ids[0] + datas[0]
@@ -93,6 +114,8 @@ export default defineEventHandler(async event => {
         console.error(err)
       }
       return m3u8
+    } else {
+      return data
     }
   }
   catch (e: any) {

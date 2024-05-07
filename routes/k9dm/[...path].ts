@@ -35,13 +35,13 @@ export default defineEventHandler(async event => {
       console.log(urls, 'urls')
       for await (const url of urls) {
         const u = url.split(/\/|.html/)
-        const n = u[u.length - 2]
+        const n = +u[u.length - 2]
         await page.goto(`https://k9dm.com${url}`, { waitUntil: 'networkidle0', timeout: 60000000 })
         const html = await page.content()
         const $ = load(html)
         const src = $('#fed-play-iframe').attr('src')
         const h = src?.split('url=')
-        play.push(`第${n}集$${h?.[1]}\n`)
+        play.push(`第${n}集$${h?.[1]}${urls.length === n ? '' : '\n'}`)
       }
 
       await page.close()

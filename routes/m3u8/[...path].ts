@@ -77,8 +77,8 @@ export default defineEventHandler(async event => {
           return item
       }).filter(item => item).join('\n')
       try {
-        const { name, num } = query
-        const filePath = `${path.join(process.cwd(), `/m3u8/${name}/${num}.m3u8`)}`
+        const { name, nid, sid } = query
+        const filePath = `${path.join(process.cwd(), `/m3u8/${name}/${sid || 1}/${nid}.m3u8`)}`
         const exist = await checkFileExistence(filePath)
         if (exist)
           return m3u8

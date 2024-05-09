@@ -27,21 +27,19 @@ export default defineEventHandler(async event => {
     const ps = play.split('\n')
     const findOneTs = ps.find(item => item.includes('.ts'))
     const useStr = findOneTs?.substring(0, 13)
-    let p1 = 0
-    let p2 = 0
     if (useStr) {
       ps.forEach((item, i) => {
         if (!item.includes(useStr) && item.includes('.ts')) {
-          let removed: string[] = []
+          const replacedString: string = ps[i-1].replace(/(#EXTINF:)\d+(\.\d+)?/g, '$10.1');
           if (ps[i - 2] === '#EXT-X-DISCONTINUITY') {
-            removed = ps.splice(i - 2, 3)
-            p1 = 2
-            p2 = 4
+            ps.splice(i, 1, 'ziye')
+            ps.splice(i - 1, 1, 'ziye');
+            ps.splice(i-2, 1, 'ziye')
           }
           if (ps[i - 1].includes('#EXTINF')) {
-            removed = ps.splice(i - 1 - p1, 2 + p2)
-            p1 = 0
-            p2 = 0
+            console.log(ps[i-1], i, ps[i], replacedString)
+            ps.splice(i, 1, 'ziye')
+            ps.splice(i - 1, 1, 'ziye')
           }
         }
       })

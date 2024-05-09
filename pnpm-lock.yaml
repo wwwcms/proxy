@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.16.2
-        version: 2.16.2(@eslint-react/eslint-plugin@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5)
+        version: 2.17.0(@eslint-react/eslint-plugin@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5)
       '@dxhuii/eslint-config':
         specifier: ^2.1.3
-        version: 2.1.3(@antfu/eslint-config@2.16.2(@eslint-react/eslint-plugin@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5))(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+        version: 2.1.3(@antfu/eslint-config@2.17.0(@eslint-react/eslint-plugin@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5))(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -41,8 +41,8 @@ importers:
 
 packages:
 
-  '@antfu/eslint-config@2.16.2':
-    resolution: {integrity: sha512-jvwM/Tukvulzr6L85zdpgU7jOxRBlOYFzsJE6u1cqbcR7g64w/7elo/MzehWrxilLrJMKajpSZ9FY4QRvsdHjg==}
+  '@antfu/eslint-config@2.17.0':
+    resolution: {integrity: sha512-OvLgETKfNTFD1PaGToM/Mu1A53lbMCXN4TLLL3QloGK3IkuSvNoGumLwkK1wQ1AsZAG+hfGoe+Rkd7V9Wv7MlA==}
     hasBin: true
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.5.8
@@ -87,8 +87,8 @@ packages:
   '@antfu/install-pkg@0.3.3':
     resolution: {integrity: sha512-nHHsk3NXQ6xkCfiRRC8Nfrg8pU5kkr3P3Y9s9dKqiuRmBD0Yap7fymNDjGFKeWhZQHqqbCS5CfeMy9wtExM24w==}
 
-  '@antfu/utils@0.7.7':
-    resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
+  '@antfu/utils@0.7.8':
+    resolution: {integrity: sha512-rWQkqXRESdjXtc+7NRfK9lASQjpXJu1ayp7qi1d23zZorY+wBHVLHHoVcMsEnkqEBWTFqbztO7/QdJFzyEcLTg==}
 
   '@babel/code-frame@7.24.2':
     resolution: {integrity: sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ==}
@@ -294,34 +294,34 @@ packages:
     resolution: {integrity: sha512-Cu96Sd2By9mCNTx2iyKOmq10v22jUVQv0lQnlGNy16oE9589yE+QADPbrMGCkA51cKZSg3Pu/aTJVTGfL/qjUA==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint-react/ast@1.5.10':
-    resolution: {integrity: sha512-x3PW9KGaiHPe8UM4HllRF8T5DxnZToZj6NqmtbwmqjTwpS6yVbAZW/9QhJxjFQNT2aM5qRqXyyM6hgfxKXGv7Q==}
+  '@eslint-react/ast@1.5.11':
+    resolution: {integrity: sha512-MFR0xK0NFhR3sUFDbzdfHC76mAg4/htRAcK7GnoEOK8vw+uH4O8Uug/CMwNNARJmlx5SwYrwDcEXzOD5bjgvYQ==}
 
-  '@eslint-react/core@1.5.10':
-    resolution: {integrity: sha512-n+MHsIxQZ+d+hOnOTWz6NuCdA7Ms2UZpf8gSn+kQTWwG6O2uqnnyomPRStgwDF1DmsXp4t4NVBxfz9gOXAqFuQ==}
+  '@eslint-react/core@1.5.11':
+    resolution: {integrity: sha512-Oao6vk05AJuuT2Gih4KEdgp76cfsqFQYPsarKrgbgFsKl+xBi3j2T7M3OyHoXQVfWntZoQI+SDkkwCjyVgpvow==}
 
-  '@eslint-react/eslint-plugin@1.5.10':
-    resolution: {integrity: sha512-PFvBaWhM3EGSiDAqMHiuhDFzc87H6CYdr1hHPgY38AMTbfuCDqUSxTx5jyovNqS7UESuhyP1+cd6N85UqhTqwQ==}
+  '@eslint-react/eslint-plugin@1.5.11':
+    resolution: {integrity: sha512-wsHIrLKFyUi8aSBEgZSLWHyQQTOCQVMJRYJlob0Vu1mC6mDwMfsy4sCdR4teZr8WD+U795b8SQHa/m0q6h6NEA==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
     peerDependencies:
       '@typescript-eslint/parser': ^7.5.0
-      eslint: ^9.0.0
+      eslint: ^8.57.0
       typescript: ^5.3.3
 
-  '@eslint-react/jsx@1.5.10':
-    resolution: {integrity: sha512-hCYBXNrl5qYwhRE6NXfiYyXzZ1zfjZ7EXMA7PMxyfAY5EX29mdjnrfoOPgjO5E3ZON5JFNDqmvDTOR4z+BY+Gw==}
+  '@eslint-react/jsx@1.5.11':
+    resolution: {integrity: sha512-OWsR9+lIFzLumKcbzkpcYZWfHjrIjZ2pln7ZgGewrgoqVTIZvakRtyw3Fhchiv7EciiuQUMdItp2IuijOLiH3w==}
 
-  '@eslint-react/shared@1.5.10':
-    resolution: {integrity: sha512-YSxdfDhEWYh7CbjNKdUI3FsSOKVtOrGcIB1IYOAXNUwthQ6faDkuL6nxlPJUoVFW0/CoyfgdUh6/XjcdctzYNQ==}
+  '@eslint-react/shared@1.5.11':
+    resolution: {integrity: sha512-QEs8qv4lxQDgsgdPtbxBuYC4Ls5K3Sxo7gKKRvW22q8WWcf8eVJXpVIA9OnpiKpb/5Y/bbCQPUcxsOPyBNgwIw==}
 
-  '@eslint-react/tools@1.5.10':
-    resolution: {integrity: sha512-/gOBlZaHsrzEdbvwt1ifhg2Bif/43RXANAJG/JJ8yDpYbm0P1iVpaNdh8lTCxIfzBTt5smNW4/+Ohd7zM+yP8Q==}
+  '@eslint-react/tools@1.5.11':
+    resolution: {integrity: sha512-i9RtwDXohG2HZ/z1OuB9bMC2RYTbkL5Ccsbtev0FACekB/4NPbRsL5HVrKe7VDCGTCwjptQMJo6Xle1J79Xezw==}
 
-  '@eslint-react/types@1.5.10':
-    resolution: {integrity: sha512-0Cysy4gx0GKBNPZt1E6h0xTjtq/phUhI+6WCo39hPH+o2jh0DPlpT5VDRMVkCEFeGEJnWHxv5SI+J/OL43fJqw==}
+  '@eslint-react/types@1.5.11':
+    resolution: {integrity: sha512-rsOVwG2+iCaYLOPyPalYgtYgaFgMVUbIZm8nS4Nc2twzEAe1jIRgRZCrDvtx7z2ugSIXmuGbsEIwz1XmFpmJpw==}
 
-  '@eslint-react/var@1.5.10':
-    resolution: {integrity: sha512-kcJnEZNFxJjWWbD92NYXsQpLNSzZ1SwJ22fh5NildeJilR2o2BfDck1U/UY29EijVhXXNOLSv1++p6FCf6ECtg==}
+  '@eslint-react/var@1.5.11':
+    resolution: {integrity: sha512-Vqbmk1XIA5X3rgQMI8x0a9M4Yoacv9enf70ElN6QlJHjGfuXW00ZYDVwgqEZ7FhSvRmysc5YSjec7m0qDOugxQ==}
 
   '@eslint/eslintrc@2.1.4':
     resolution: {integrity: sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ==}
@@ -767,32 +767,32 @@ packages:
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
     engines: {node: '>=18'}
 
-  '@stylistic/eslint-plugin-js@1.8.1':
-    resolution: {integrity: sha512-c5c2C8Mos5tTQd+NWpqwEu7VT6SSRooAguFPMj1cp2RkTYl1ynKoXo8MWy3k4rkbzoeYHrqC2UlUzsroAN7wtQ==}
-    engines: {node: ^16.0.0 || >=18.0.0}
+  '@stylistic/eslint-plugin-js@2.0.0':
+    resolution: {integrity: sha512-yQZKvygpWZ5rlIyzdQzmJbT4RwK2bfYn+QCey+WUy6XdgLQ0RHXSFT1ezBZyxWKbNRfoVbbNfs1BqyEDIkXX3A==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
 
-  '@stylistic/eslint-plugin-jsx@1.8.1':
-    resolution: {integrity: sha512-k1Eb6rcjMP+mmjvj+vd9y5KUdWn1OBkkPLHXhsrHt5lCDFZxJEs0aVQzE5lpYrtVZVkpc5esTtss/cPJux0lfA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
+  '@stylistic/eslint-plugin-jsx@2.0.0':
+    resolution: {integrity: sha512-XwsqawXfCvFdU8iu217xfiVIDXq3xF6zRpmGTrgmnXP/FxBcY9shDz9sZYGwNzEgiBeS14nL1vRuO9NWkYutoA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
 
-  '@stylistic/eslint-plugin-plus@1.8.1':
-    resolution: {integrity: sha512-4+40H3lHYTN8OWz+US8CamVkO+2hxNLp9+CAjorI7top/lHqemhpJvKA1LD9Uh+WMY9DYWiWpL2+SZ2wAXY9fQ==}
+  '@stylistic/eslint-plugin-plus@2.0.0':
+    resolution: {integrity: sha512-iif+oS6SaAIG9yN3zynNWT2YqP/vq1Os5sgIKocinkjZvbTBdNygq7OoxO+V2PTwx/KwF0z6IXU5OdxwdEizkg==}
     peerDependencies:
       eslint: '*'
 
-  '@stylistic/eslint-plugin-ts@1.8.1':
-    resolution: {integrity: sha512-/q1m+ZuO1JHfiSF16EATFzv7XSJkc5W6DocfvH5o9oB6WWYFMF77fVoBWnKT3wGptPOc2hkRupRKhmeFROdfWA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
+  '@stylistic/eslint-plugin-ts@2.0.0':
+    resolution: {integrity: sha512-Rsk9XLR+Edv7TNh20Z+pfFA+T6pjPidbK1JYk6UIxc5iVW5Po6E/NOnO0UKD++uWT3XIDsC0LkHUxfKPoXf9TQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
 
-  '@stylistic/eslint-plugin@1.8.1':
-    resolution: {integrity: sha512-64My6I7uCcmSQ//427Pfg2vjSf9SDzfsGIWohNFgISMLYdC5BzJqDo647iDDJzSxINh3WTC0Ql46ifiKuOoTyA==}
-    engines: {node: ^16.0.0 || >=18.0.0}
+  '@stylistic/eslint-plugin@2.0.0':
+    resolution: {integrity: sha512-M3j82FavnsI5Wm8+C2MHqUBijKEVfXmKci3YVaIpKaB9SSY5lJn1+Yh5zk8AqV+qH3qOSJJeFCTyIiQpghxBiA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
 
@@ -814,8 +814,8 @@ packages:
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
 
-  '@types/node@20.12.10':
-    resolution: {integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==}
+  '@types/node@20.12.11':
+    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -832,8 +832,8 @@ packages:
   '@types/yauzl@2.10.3':
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
 
-  '@typescript-eslint/eslint-plugin@7.7.1':
-    resolution: {integrity: sha512-KwfdWXJBOviaBVhxO3p5TJiLpNuh2iyXyjmWN0f1nU87pwyvfS0EmjC6ukQVYVFJd/K1+0NWGPDXiyEyQorn0Q==}
+  '@typescript-eslint/eslint-plugin@7.8.0':
+    resolution: {integrity: sha512-gFTT+ezJmkwutUPmB0skOj3GZJtlEGnlssems4AjkVweUPGj7jRwwqg0Hhg7++kPGJqKtTYx+R05Ftww372aIg==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^7.0.0
@@ -843,8 +843,8 @@ packages:
       typescript:
         optional: true
 
-  '@typescript-eslint/parser@7.7.1':
-    resolution: {integrity: sha512-vmPzBOOtz48F6JAGVS/kZYk4EkXao6iGrD838sp1w3NQQC0W8ry/q641KU4PrG7AKNAf56NOcR8GOpH8l9FPCw==}
+  '@typescript-eslint/parser@7.8.0':
+    resolution: {integrity: sha512-KgKQly1pv0l4ltcftP59uQZCi4HUYswCLbTqVZEJu7uLX8CTLyswqMLqLN+2QFz4jCptqWVV4SB7vdxcH2+0kQ==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       eslint: ^8.56.0
@@ -852,28 +852,10 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  '@typescript-eslint/scope-manager@6.21.0':
-    resolution: {integrity: sha512-OwLUIWZJry80O99zvqXVEioyniJMa+d2GrqpUTqi5/v5D5rOrppJVBPa0yKCblcigC0/aYAzxxqQ1B+DS2RYsg==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-
-  '@typescript-eslint/scope-manager@7.7.1':
-    resolution: {integrity: sha512-PytBif2SF+9SpEUKynYn5g1RHFddJUcyynGpztX3l/ik7KmZEv19WCMhUBkHXPU9es/VWGD3/zg3wg90+Dh2rA==}
-    engines: {node: ^18.18.0 || >=20.0.0}
 
   '@typescript-eslint/scope-manager@7.8.0':
     resolution: {integrity: sha512-viEmZ1LmwsGcnr85gIq+FCYI7nO90DVbE37/ll51hjv9aG+YZMb4WDE2fyWpUR4O/UrhGRpYXK/XajcGTk2B8g==}
     engines: {node: ^18.18.0 || >=20.0.0}
-
-  '@typescript-eslint/type-utils@7.7.1':
-    resolution: {integrity: sha512-ZksJLW3WF7o75zaBPScdW1Gbkwhd/lyeXGf1kQCxJaOeITscoSl0MjynVvCzuV5boUz/3fOI06Lz8La55mu29Q==}
-    engines: {node: ^18.18.0 || >=20.0.0}
-    peerDependencies:
-      eslint: ^8.56.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   '@typescript-eslint/type-utils@7.8.0':
     resolution: {integrity: sha512-H70R3AefQDQpz9mGv13Uhi121FNMh+WEaRqcXTX09YEDky21km4dV1ZXJIp8QjXc4ZaVkXVdohvWDzbnbHDS+A==}
@@ -885,35 +867,9 @@ packages:
       typescript:
         optional: true
 
-  '@typescript-eslint/types@6.21.0':
-    resolution: {integrity: sha512-1kFmZ1rOm5epu9NZEZm1kckCDGj5UJEf7P1kliH4LKu/RkwpsfqqGmY2OOcUs18lSlQBKLDYBOGxRVtrMN5lpg==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-
-  '@typescript-eslint/types@7.7.1':
-    resolution: {integrity: sha512-AmPmnGW1ZLTpWa+/2omPrPfR7BcbUU4oha5VIbSbS1a1Tv966bklvLNXxp3mrbc+P2j4MNOTfDffNsk4o0c6/w==}
-    engines: {node: ^18.18.0 || >=20.0.0}
-
   '@typescript-eslint/types@7.8.0':
     resolution: {integrity: sha512-wf0peJ+ZGlcH+2ZS23aJbOv+ztjeeP8uQ9GgwMJGVLx/Nj9CJt17GWgWWoSmoRVKAX2X+7fzEnAjxdvK2gqCLw==}
     engines: {node: ^18.18.0 || >=20.0.0}
-
-  '@typescript-eslint/typescript-estree@6.21.0':
-    resolution: {integrity: sha512-6npJTkZcO+y2/kr+z0hc4HwNfrrP4kNYh57ek7yCNlrBjWQ1Y0OS7jiZTkgumrvkX5HkEKXFZkkdFNkaW2wmUQ==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
-  '@typescript-eslint/typescript-estree@7.7.1':
-    resolution: {integrity: sha512-CXe0JHCXru8Fa36dteXqmH2YxngKJjkQLjxzoj6LYwzZ7qZvgsLSc+eqItCrqIop8Vl2UKoAi0StVWu97FQZIQ==}
-    engines: {node: ^18.18.0 || >=20.0.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   '@typescript-eslint/typescript-estree@7.8.0':
     resolution: {integrity: sha512-5pfUCOwK5yjPaJQNy44prjCwtr981dO8Qo9J9PwYXZ0MosgAbfEMB008dJ5sNo3+/BN6ytBPuSvXUg9SAqB0dg==}
@@ -924,31 +880,11 @@ packages:
       typescript:
         optional: true
 
-  '@typescript-eslint/utils@6.21.0':
-    resolution: {integrity: sha512-NfWVaC8HP9T8cbKQxHcsJBY5YE1O33+jpMwN45qzWWaPDZgLIbo12toGMWnmhvCpd3sIxkpDw3Wv1B3dYrbDQQ==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
-
-  '@typescript-eslint/utils@7.7.1':
-    resolution: {integrity: sha512-QUvBxPEaBXf41ZBbaidKICgVL8Hin0p6prQDu6bbetWo39BKbWJxRsErOzMNT1rXvTll+J7ChrbmMCXM9rsvOQ==}
-    engines: {node: ^18.18.0 || >=20.0.0}
-    peerDependencies:
-      eslint: ^8.56.0
-
   '@typescript-eslint/utils@7.8.0':
     resolution: {integrity: sha512-L0yFqOCflVqXxiZyXrDr80lnahQfSOfc9ELAAZ75sqicqp2i36kEZZGuUymHNFoYOqxRT05up760b4iGsl02nQ==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       eslint: ^8.56.0
-
-  '@typescript-eslint/visitor-keys@6.21.0':
-    resolution: {integrity: sha512-JJtkDduxLi9bivAB+cYOVMtbkqdPOhZ+ZI5LC47MIRrDV4Yn2o+ZnW10Nkmr28xRpSpdJ6Sm42Hjf2+REYXm0A==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-
-  '@typescript-eslint/visitor-keys@7.7.1':
-    resolution: {integrity: sha512-gBL3Eq25uADw1LQ9kVpf3hRM+DWzs0uZknHYK3hq4jcTPqVCClHGDnB6UUUV2SFeBeA4KWHWbbLqmbGcZ4FYbw==}
-    engines: {node: ^18.18.0 || >=20.0.0}
 
   '@typescript-eslint/visitor-keys@7.8.0':
     resolution: {integrity: sha512-q4/gibTNBQNA0lGyYQCmWRS5D15n8rXh4QjK3KV+MBPlTYHpfBUT3D3PaPR/HeNiI9W6R7FvlkcGhNyAoP+caA==}
@@ -969,8 +905,8 @@ packages:
     resolution: {integrity: sha512-bWxr0ax0X8F97/JcQ8V34Zl4ZSPklMkYAExj+svfanng7i6ymBCmMDfSVcNjb7VJFP1ealNuEnJ9PJcV0N0aQQ==}
     engines: {node: '>=14'}
 
-  '@vercel/nft@0.26.4':
-    resolution: {integrity: sha512-j4jCOOXke2t8cHZCIxu1dzKLHLcFmYzC3yqAK6MfZznOL1QIJKd0xcFsXK3zcqzU7ScsE2zWkiMMNHGMHgp+FA==}
+  '@vercel/nft@0.26.5':
+    resolution: {integrity: sha512-NHxohEqad6Ra/r4lGknO52uc/GrWILXAMs1BB4401GTqww0fw1bAqzpG1XHuDO+dprg4GvsD9ZLLSsdo78p9hQ==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -1487,8 +1423,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.4.757:
-    resolution: {integrity: sha512-jftDaCknYSSt/+KKeXzH3LX5E2CvRLm75P3Hj+J/dv3CL0qUYcOt13d5FN1NiL5IJbbhzHrb3BomeG2tkSlZmw==}
+  electron-to-chromium@1.4.758:
+    resolution: {integrity: sha512-/o9x6TCdrYZBMdGeTifAP3wlF/gVT+TtWJe3BSmtNh92Mw81U9hrYwW9OAGUh+sEOX/yz5e34sksqRruZbjYrw==}
 
   emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
@@ -1578,13 +1514,13 @@ packages:
   eslint-parser-plain@0.1.0:
     resolution: {integrity: sha512-oOeA6FWU0UJT/Rxc3XF5Cq0nbIZbylm7j8+plqq0CZoE6m4u32OXJrR+9iy4srGMmF6v6pmgvP1zPxSRIGh3sg==}
 
-  eslint-plugin-antfu@2.1.3:
-    resolution: {integrity: sha512-Vq7B98VH3vOUKtJLZBDA6e6zBJaZO2YDIxGJ0rU8bm/LLfApQ/Uj1ktoy/KigQ7RqR5ZQjn6zg4G4kgNjoC+mQ==}
+  eslint-plugin-antfu@2.2.0:
+    resolution: {integrity: sha512-QHzHYP+fyfhSkIdcuT9JZ4rCPuJOoHRE27gglPYHlJ6lxB7pO9i45yAy4aurx/rleBuEC27U4c//1Nwtbasj4Q==}
     peerDependencies:
       eslint: '*'
 
-  eslint-plugin-command@0.1.9:
-    resolution: {integrity: sha512-aZC7SoTUX/sci2A/aDNgZ9aC4EfC0ICoPF1l6+nrHht+jRCJBq3p6afFrYt4nVuU2mBdWgaFXxqa/CF2aA5XUw==}
+  eslint-plugin-command@0.2.0:
+    resolution: {integrity: sha512-SGOMTs6Pu5HQKwCF9uZ214cdVlJ99U+6GRoUS01zeLZmcQcFU4YXy2KTKqXaEsNCvaFY91OrHRZbh4/1xt9Yzw==}
     peerDependencies:
       eslint: '*'
 
@@ -1657,28 +1593,28 @@ packages:
       vue-eslint-parser:
         optional: true
 
-  eslint-plugin-react-core@1.5.10:
-    resolution: {integrity: sha512-N80QyIdC9hSYo3sbPiEPU5qV6vtJPaPdRv7Il/pFdu3IOiUz2s8Ytbv0kqPzlzZqu/lCMQLzdENq9wuhyZpGOw==}
+  eslint-plugin-react-core@1.5.11:
+    resolution: {integrity: sha512-JUphSF5+AHS1Alx1k/Lw9KiubWMh9z/LDJJnJGu4Qzs6SQttj+2lScETlW6Kq4prWgGYQdowSKi8W8YDRpY22g==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
     peerDependencies:
       '@typescript-eslint/parser': ^7.5.0
-      eslint: ^9.0.0
+      eslint: ^8.57.0
       typescript: ^5.3.3
 
-  eslint-plugin-react-dom@1.5.10:
-    resolution: {integrity: sha512-Sq30dGB/MyGVtXwb7kt6K5vI9yfJUJKoejDXujg3oFEh1JRtNdHXh6JQH3LFB+TG3CBi0ZGyRNKXDq4gxoItzA==}
+  eslint-plugin-react-dom@1.5.11:
+    resolution: {integrity: sha512-4pXwBGVbi+k7S12TRInbZGrnYBnemOmRpZziKHGZqdJLTGBgPCNnQi6x8BwpvqH+qZrogq6enhpjpAaVWELBtA==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
     peerDependencies:
       '@typescript-eslint/parser': ^7.5.0
-      eslint: ^9.0.0
+      eslint: ^8.57.0
       typescript: ^5.3.3
 
-  eslint-plugin-react-hooks-extra@1.5.10:
-    resolution: {integrity: sha512-Tg3nq43aI7yKHQXrxuUV2FYiUznsO0INpMCjwtRP265ctJgLnONkCCQbQMAPBDCV59a5cEeEsH7E8dfIkqE90Q==}
+  eslint-plugin-react-hooks-extra@1.5.11:
+    resolution: {integrity: sha512-YWawEfeG0QgLtOct71FQSygZ8Qj74LnEG3NJ8FAvYtvQ/wvahYFFkl669r1Hx95cxyNeONptKW493CnFS85YYg==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
     peerDependencies:
       '@typescript-eslint/parser': ^7.5.0
-      eslint: ^9.0.0
+      eslint: ^8.57.0
       typescript: ^5.3.3
 
   eslint-plugin-react-hooks@4.6.2:
@@ -1687,12 +1623,12 @@ packages:
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
 
-  eslint-plugin-react-naming-convention@1.5.10:
-    resolution: {integrity: sha512-f/ejXTJ8PQqoQK3AM3fqWOHxMC7fmg/tjzTyHp7hrPc0fDvqls7ErtXjXlXgQ+JwaE7AjusLqpWL/ZWcUNsNnQ==}
+  eslint-plugin-react-naming-convention@1.5.11:
+    resolution: {integrity: sha512-JaINBv60QxoXrS9KbW+XVgZ44f3cf1MZHlGF32Yk30Hk/iC1+PuZQfc9CK8iTsIWd3CNvSkelViA2rTEVlNyOw==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
     peerDependencies:
       '@typescript-eslint/parser': ^7.5.0
-      eslint: ^9.0.0
+      eslint: ^8.57.0
       typescript: ^5.3.3
 
   eslint-plugin-react-refresh@0.4.6:
@@ -1735,8 +1671,8 @@ packages:
       vitest:
         optional: true
 
-  eslint-plugin-vue@9.25.0:
-    resolution: {integrity: sha512-tDWlx14bVe6Bs+Nnh3IGrD+hb11kf2nukfm6jLsmJIhmiRQ1SUaksvwY9U5MvPB0pcrg0QK0xapQkfITs3RKOA==}
+  eslint-plugin-vue@9.26.0:
+    resolution: {integrity: sha512-eTvlxXgd4ijE1cdur850G6KalZqk65k1JKoOI2d1kT3hr8sPD07j1q98FRFdNnpxBELGPWxZmInxeHGF/GxtqQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -2397,10 +2333,6 @@ packages:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
     engines: {node: '>=10'}
 
-  minimatch@9.0.3:
-    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
-    engines: {node: '>=16 || 14 >=14.17'}
-
   minimatch@9.0.4:
     resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -2919,8 +2851,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  short-unique-id@5.0.3:
-    resolution: {integrity: sha512-yhniEILouC0s4lpH0h7rJsfylZdca10W9mDJRAFh3EpcSUanCHGb0R7kcFOIUCZYSAPo0PUD5ZxWQdW0T4xaug==}
+  short-unique-id@5.2.0:
+    resolution: {integrity: sha512-cMGfwNyfDZ/nzJ2k2M+ClthBIh//GlZl1JEf47Uoa9XR11bz8Pa2T2wQO4bVrRdH48LrIDWJahQziKo3MjhsWg==}
     hasBin: true
 
   signal-exit@3.0.7:
@@ -3294,6 +3226,9 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  valibot@0.30.0:
+    resolution: {integrity: sha512-5POBdbSkM+3nvJ6ZlyQHsggisfRtyT4tVTo1EIIShs6qCdXJnyWU5TJ68vr8iTg5zpOLjXLRiBqNx+9zwZz/rA==}
+
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
@@ -3407,19 +3342,19 @@ packages:
 
 snapshots:
 
-  '@antfu/eslint-config@2.16.2(@eslint-react/eslint-plugin@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5)':
+  '@antfu/eslint-config@2.17.0(@eslint-react/eslint-plugin@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
       '@antfu/install-pkg': 0.3.3
       '@clack/prompts': 0.7.0
-      '@stylistic/eslint-plugin': 1.8.1(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/eslint-plugin': 7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
+      '@stylistic/eslint-plugin': 2.0.0(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/eslint-plugin': 7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
       eslint-config-flat-gitignore: 0.1.5
       eslint-flat-config-utils: 0.2.4
       eslint-merge-processors: 0.1.0(eslint@9.2.0)
-      eslint-plugin-antfu: 2.1.3(eslint@9.2.0)
-      eslint-plugin-command: 0.1.9(eslint@9.2.0)
+      eslint-plugin-antfu: 2.2.0(eslint@9.2.0)
+      eslint-plugin-command: 0.2.0(eslint@9.2.0)
       eslint-plugin-eslint-comments: 3.2.0(eslint@9.2.0)
       eslint-plugin-import-x: 0.5.0(eslint@9.2.0)(typescript@5.4.5)
       eslint-plugin-jsdoc: 48.2.3(eslint@9.2.0)
@@ -3430,9 +3365,9 @@ snapshots:
       eslint-plugin-perfectionist: 2.10.0(eslint@9.2.0)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@9.2.0))
       eslint-plugin-toml: 0.11.0(eslint@9.2.0)
       eslint-plugin-unicorn: 52.0.0(eslint@9.2.0)
-      eslint-plugin-unused-imports: 3.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)
-      eslint-plugin-vitest: 0.5.4(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
-      eslint-plugin-vue: 9.25.0(eslint@9.2.0)
+      eslint-plugin-unused-imports: 3.2.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)
+      eslint-plugin-vitest: 0.5.4(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      eslint-plugin-vue: 9.26.0(eslint@9.2.0)
       eslint-plugin-yml: 1.14.0(eslint@9.2.0)
       eslint-processor-vue-blocks: 0.1.2(@vue/compiler-sfc@3.4.27)(eslint@9.2.0)
       globals: 15.1.0
@@ -3445,7 +3380,7 @@ snapshots:
       yaml-eslint-parser: 1.2.2
       yargs: 17.7.2
     optionalDependencies:
-      '@eslint-react/eslint-plugin': 1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/eslint-plugin': 1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
       '@unocss/eslint-plugin': 0.59.4(eslint@9.2.0)(typescript@5.4.5)
       eslint-plugin-format: 0.1.1(eslint@9.2.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@9.2.0)
@@ -3461,7 +3396,7 @@ snapshots:
     dependencies:
       '@jsdevtools/ez-spawn': 3.0.4
 
-  '@antfu/utils@0.7.7': {}
+  '@antfu/utils@0.7.8': {}
 
   '@babel/code-frame@7.24.2':
     dependencies:
@@ -3510,10 +3445,10 @@ snapshots:
 
   '@dprint/toml@0.6.1': {}
 
-  '@dxhuii/eslint-config@2.1.3(@antfu/eslint-config@2.16.2(@eslint-react/eslint-plugin@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5))(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)':
+  '@dxhuii/eslint-config@2.1.3(@antfu/eslint-config@2.17.0(@eslint-react/eslint-plugin@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5))(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@antfu/eslint-config': 2.16.2(@eslint-react/eslint-plugin@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/eslint-plugin': 1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      '@antfu/eslint-config': 2.17.0(@eslint-react/eslint-plugin@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(@unocss/eslint-plugin@0.59.4(eslint@9.2.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.27)(eslint-plugin-format@0.1.1(eslint@9.2.0))(eslint-plugin-react-hooks@4.6.2(eslint@9.2.0))(eslint-plugin-react-refresh@0.4.6(eslint@9.2.0))(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/eslint-plugin': 1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
       '@unocss/eslint-config': 0.59.4(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
       eslint-plugin-format: 0.1.1(eslint@9.2.0)
@@ -3606,11 +3541,11 @@ snapshots:
 
   '@eslint-community/regexpp@4.10.0': {}
 
-  '@eslint-react/ast@1.5.10(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/ast@1.5.11(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.2.0)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
@@ -3620,49 +3555,51 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint-react/core@1.5.10(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/core@1.5.11(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/jsx': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/jsx': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/var': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/type-utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
-      short-unique-id: 5.0.3
+      short-unique-id: 5.2.0
+      valibot: 0.30.0
     transitivePeerDependencies:
       - eslint
       - supports-color
       - typescript
 
-  '@eslint-react/eslint-plugin@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/eslint-plugin@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/type-utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
-      eslint-plugin-react-core: 1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
-      eslint-plugin-react-dom: 1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
-      eslint-plugin-react-hooks-extra: 1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
-      eslint-plugin-react-naming-convention: 1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      eslint-plugin-react-core: 1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      eslint-plugin-react-dom: 1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      eslint-plugin-react-hooks-extra: 1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      eslint-plugin-react-naming-convention: 1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint-react/jsx@1.5.10(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/jsx@1.5.11(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/var': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/var': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
@@ -3672,7 +3609,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint-react/shared@1.5.10(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/shared@1.5.11(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       deepmerge-ts: 5.1.0
@@ -3681,11 +3618,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint-react/tools@1.5.10': {}
+  '@eslint-react/tools@1.5.11': {}
 
-  '@eslint-react/types@1.5.10(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/types@1.5.11(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@eslint-react/tools': 1.5.10
+      '@eslint-react/tools': 1.5.11
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
     transitivePeerDependencies:
@@ -3693,15 +3630,16 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint-react/var@1.5.10(eslint@9.2.0)(typescript@5.4.5)':
+  '@eslint-react/var@1.5.11(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       string-ts: 2.1.1
+      valibot: 0.30.0
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -4128,48 +4066,47 @@ snapshots:
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
-  '@stylistic/eslint-plugin-js@1.8.1(eslint@9.2.0)':
+  '@stylistic/eslint-plugin-js@2.0.0(eslint@9.2.0)':
     dependencies:
       '@types/eslint': 8.56.10
       acorn: 8.11.3
-      escape-string-regexp: 4.0.0
       eslint: 9.2.0
-      eslint-visitor-keys: 3.4.3
-      espree: 9.6.1
+      eslint-visitor-keys: 4.0.0
+      espree: 10.0.1
 
-  '@stylistic/eslint-plugin-jsx@1.8.1(eslint@9.2.0)':
+  '@stylistic/eslint-plugin-jsx@2.0.0(eslint@9.2.0)':
     dependencies:
-      '@stylistic/eslint-plugin-js': 1.8.1(eslint@9.2.0)
+      '@stylistic/eslint-plugin-js': 2.0.0(eslint@9.2.0)
       '@types/eslint': 8.56.10
       eslint: 9.2.0
       estraverse: 5.3.0
       picomatch: 4.0.2
 
-  '@stylistic/eslint-plugin-plus@1.8.1(eslint@9.2.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin-plus@2.0.0(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
       '@types/eslint': 8.56.10
-      '@typescript-eslint/utils': 6.21.0(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@stylistic/eslint-plugin-ts@1.8.1(eslint@9.2.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin-ts@2.0.0(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@stylistic/eslint-plugin-js': 1.8.1(eslint@9.2.0)
+      '@stylistic/eslint-plugin-js': 2.0.0(eslint@9.2.0)
       '@types/eslint': 8.56.10
-      '@typescript-eslint/utils': 6.21.0(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@stylistic/eslint-plugin@1.8.1(eslint@9.2.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin@2.0.0(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@stylistic/eslint-plugin-js': 1.8.1(eslint@9.2.0)
-      '@stylistic/eslint-plugin-jsx': 1.8.1(eslint@9.2.0)
-      '@stylistic/eslint-plugin-plus': 1.8.1(eslint@9.2.0)(typescript@5.4.5)
-      '@stylistic/eslint-plugin-ts': 1.8.1(eslint@9.2.0)(typescript@5.4.5)
+      '@stylistic/eslint-plugin-js': 2.0.0(eslint@9.2.0)
+      '@stylistic/eslint-plugin-jsx': 2.0.0(eslint@9.2.0)
+      '@stylistic/eslint-plugin-plus': 2.0.0(eslint@9.2.0)(typescript@5.4.5)
+      '@stylistic/eslint-plugin-ts': 2.0.0(eslint@9.2.0)(typescript@5.4.5)
       '@types/eslint': 8.56.10
       eslint: 9.2.0
     transitivePeerDependencies:
@@ -4187,7 +4124,7 @@ snapshots:
 
   '@types/http-proxy@1.17.14':
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
 
   '@types/json-schema@7.0.15': {}
 
@@ -4195,7 +4132,7 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.10
 
-  '@types/node@20.12.10':
+  '@types/node@20.12.11':
     dependencies:
       undici-types: 5.26.5
 
@@ -4209,17 +4146,17 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.12.11
     optional: true
 
-  '@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)':
+  '@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/scope-manager': 7.7.1
-      '@typescript-eslint/type-utils': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/utils': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/visitor-keys': 7.7.1
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/scope-manager': 7.8.0
+      '@typescript-eslint/type-utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/visitor-keys': 7.8.0
       debug: 4.3.4
       eslint: 9.2.0
       graphemer: 1.4.0
@@ -4232,45 +4169,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5)':
+  '@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
-      '@typescript-eslint/scope-manager': 7.7.1
-      '@typescript-eslint/types': 7.7.1
-      '@typescript-eslint/typescript-estree': 7.7.1(typescript@5.4.5)
-      '@typescript-eslint/visitor-keys': 7.7.1
+      '@typescript-eslint/scope-manager': 7.8.0
+      '@typescript-eslint/types': 7.8.0
+      '@typescript-eslint/typescript-estree': 7.8.0(typescript@5.4.5)
+      '@typescript-eslint/visitor-keys': 7.8.0
       debug: 4.3.4
       eslint: 9.2.0
     optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
-
-  '@typescript-eslint/scope-manager@6.21.0':
-    dependencies:
-      '@typescript-eslint/types': 6.21.0
-      '@typescript-eslint/visitor-keys': 6.21.0
-
-  '@typescript-eslint/scope-manager@7.7.1':
-    dependencies:
-      '@typescript-eslint/types': 7.7.1
-      '@typescript-eslint/visitor-keys': 7.7.1
 
   '@typescript-eslint/scope-manager@7.8.0':
     dependencies:
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/visitor-keys': 7.8.0
-
-  '@typescript-eslint/type-utils@7.7.1(eslint@9.2.0)(typescript@5.4.5)':
-    dependencies:
-      '@typescript-eslint/typescript-estree': 7.7.1(typescript@5.4.5)
-      '@typescript-eslint/utils': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
-      debug: 4.3.4
-      eslint: 9.2.0
-      ts-api-utils: 1.3.0(typescript@5.4.5)
-    optionalDependencies:
-      typescript: 5.4.5
-    transitivePeerDependencies:
-      - supports-color
 
   '@typescript-eslint/type-utils@7.8.0(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
@@ -4284,41 +4199,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/types@6.21.0': {}
-
-  '@typescript-eslint/types@7.7.1': {}
-
   '@typescript-eslint/types@7.8.0': {}
-
-  '@typescript-eslint/typescript-estree@6.21.0(typescript@5.4.5)':
-    dependencies:
-      '@typescript-eslint/types': 6.21.0
-      '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.4
-      globby: 11.1.0
-      is-glob: 4.0.3
-      minimatch: 9.0.3
-      semver: 7.6.1
-      ts-api-utils: 1.3.0(typescript@5.4.5)
-    optionalDependencies:
-      typescript: 5.4.5
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript-eslint/typescript-estree@7.7.1(typescript@5.4.5)':
-    dependencies:
-      '@typescript-eslint/types': 7.7.1
-      '@typescript-eslint/visitor-keys': 7.7.1
-      debug: 4.3.4
-      globby: 11.1.0
-      is-glob: 4.0.3
-      minimatch: 9.0.4
-      semver: 7.6.1
-      ts-api-utils: 1.3.0(typescript@5.4.5)
-    optionalDependencies:
-      typescript: 5.4.5
-    transitivePeerDependencies:
-      - supports-color
 
   '@typescript-eslint/typescript-estree@7.8.0(typescript@5.4.5)':
     dependencies:
@@ -4335,34 +4216,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@6.21.0(eslint@9.2.0)(typescript@5.4.5)':
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.2.0)
-      '@types/json-schema': 7.0.15
-      '@types/semver': 7.5.8
-      '@typescript-eslint/scope-manager': 6.21.0
-      '@typescript-eslint/types': 6.21.0
-      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.4.5)
-      eslint: 9.2.0
-      semver: 7.6.1
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  '@typescript-eslint/utils@7.7.1(eslint@9.2.0)(typescript@5.4.5)':
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.2.0)
-      '@types/json-schema': 7.0.15
-      '@types/semver': 7.5.8
-      '@typescript-eslint/scope-manager': 7.7.1
-      '@typescript-eslint/types': 7.7.1
-      '@typescript-eslint/typescript-estree': 7.7.1(typescript@5.4.5)
-      eslint: 9.2.0
-      semver: 7.6.1
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
   '@typescript-eslint/utils@7.8.0(eslint@9.2.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.2.0)
@@ -4376,16 +4229,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  '@typescript-eslint/visitor-keys@6.21.0':
-    dependencies:
-      '@typescript-eslint/types': 6.21.0
-      eslint-visitor-keys: 3.4.3
-
-  '@typescript-eslint/visitor-keys@7.7.1':
-    dependencies:
-      '@typescript-eslint/types': 7.7.1
-      eslint-visitor-keys: 3.4.3
 
   '@typescript-eslint/visitor-keys@7.8.0':
     dependencies:
@@ -4419,7 +4262,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@vercel/nft@0.26.4':
+  '@vercel/nft@0.26.5':
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
       '@rollup/pluginutils': 4.2.1
@@ -4623,7 +4466,7 @@ snapshots:
   browserslist@4.23.0:
     dependencies:
       caniuse-lite: 1.0.30001616
-      electron-to-chromium: 1.4.757
+      electron-to-chromium: 1.4.758
       node-releases: 2.0.14
       update-browserslist-db: 1.0.15(browserslist@4.23.0)
 
@@ -4930,7 +4773,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.4.757: {}
+  electron-to-chromium@1.4.758: {}
 
   emoji-regex@10.3.0: {}
 
@@ -5035,11 +4878,12 @@ snapshots:
 
   eslint-parser-plain@0.1.0: {}
 
-  eslint-plugin-antfu@2.1.3(eslint@9.2.0):
+  eslint-plugin-antfu@2.2.0(eslint@9.2.0):
     dependencies:
+      '@antfu/utils': 0.7.8
       eslint: 9.2.0
 
-  eslint-plugin-command@0.1.9(eslint@9.2.0):
+  eslint-plugin-command@0.2.0(eslint@9.2.0):
     dependencies:
       eslint: 9.2.0
 
@@ -5141,16 +4985,16 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-react-core@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
+  eslint-plugin-react-core@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/core': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/jsx': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/var': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/core': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/jsx': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/var': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/type-utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/types': 7.8.0
@@ -5159,38 +5003,40 @@ snapshots:
       string-ts: 2.1.1
       ts-api-utils: 1.3.0(typescript@5.4.5)
       typescript: 5.4.5
+      valibot: 0.30.0
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-dom@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
+  eslint-plugin-react-dom@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/core': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/jsx': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/var': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/core': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/jsx': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/var': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/types': 7.8.0
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
       string-ts: 2.1.1
       typescript: 5.4.5
+      valibot: 0.30.0
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-hooks-extra@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
+  eslint-plugin-react-hooks-extra@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/core': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/jsx': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/var': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/core': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/jsx': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/var': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/type-utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/types': 7.8.0
@@ -5198,6 +5044,7 @@ snapshots:
       eslint: 9.2.0
       string-ts: 2.1.1
       typescript: 5.4.5
+      valibot: 0.30.0
     transitivePeerDependencies:
       - supports-color
 
@@ -5205,15 +5052,15 @@ snapshots:
     dependencies:
       eslint: 9.2.0
 
-  eslint-plugin-react-naming-convention@1.5.10(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
+  eslint-plugin-react-naming-convention@1.5.11(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
     dependencies:
-      '@eslint-react/ast': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/core': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/jsx': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/shared': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@eslint-react/tools': 1.5.10
-      '@eslint-react/types': 1.5.10(eslint@9.2.0)(typescript@5.4.5)
-      '@typescript-eslint/parser': 7.7.1(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/ast': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/core': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/jsx': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/shared': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@eslint-react/tools': 1.5.11
+      '@eslint-react/types': 1.5.11(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.8.0
       '@typescript-eslint/type-utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       '@typescript-eslint/types': 7.8.0
@@ -5221,6 +5068,7 @@ snapshots:
       eslint: 9.2.0
       string-ts: 2.1.1
       typescript: 5.4.5
+      valibot: 0.30.0
     transitivePeerDependencies:
       - supports-color
 
@@ -5260,24 +5108,24 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-unused-imports@3.2.0(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0):
+  eslint-plugin-unused-imports@3.2.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0):
     dependencies:
       eslint: 9.2.0
       eslint-rule-composer: 0.3.0
     optionalDependencies:
-      '@typescript-eslint/eslint-plugin': 7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/eslint-plugin': 7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
 
-  eslint-plugin-vitest@0.5.4(@typescript-eslint/eslint-plugin@7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
+  eslint-plugin-vitest@0.5.4(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5):
     dependencies:
       '@typescript-eslint/utils': 7.8.0(eslint@9.2.0)(typescript@5.4.5)
       eslint: 9.2.0
     optionalDependencies:
-      '@typescript-eslint/eslint-plugin': 7.7.1(@typescript-eslint/parser@7.7.1(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
+      '@typescript-eslint/eslint-plugin': 7.8.0(@typescript-eslint/parser@7.8.0(eslint@9.2.0)(typescript@5.4.5))(eslint@9.2.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  eslint-plugin-vue@9.25.0(eslint@9.2.0):
+  eslint-plugin-vue@9.26.0(eslint@9.2.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.2.0)
       eslint: 9.2.0
@@ -6025,10 +5873,6 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  minimatch@9.0.3:
-    dependencies:
-      brace-expansion: 2.0.1
-
   minimatch@9.0.4:
     dependencies:
       brace-expansion: 2.0.1
@@ -6086,7 +5930,7 @@ snapshots:
       '@rollup/plugin-terser': 0.4.4(rollup@4.17.2)
       '@rollup/pluginutils': 5.1.0(rollup@4.17.2)
       '@types/http-proxy': 1.17.14
-      '@vercel/nft': 0.26.4
+      '@vercel/nft': 0.26.5
       archiver: 7.0.1
       c12: 1.10.0
       chalk: 5.3.0
@@ -6655,7 +6499,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  short-unique-id@5.0.3: {}
+  short-unique-id@5.2.0: {}
 
   signal-exit@3.0.7: {}
 
@@ -6899,7 +6743,7 @@ snapshots:
 
   unconfig@0.3.13:
     dependencies:
-      '@antfu/utils': 0.7.7
+      '@antfu/utils': 0.7.8
       defu: 6.1.4
       jiti: 1.21.0
 
@@ -7008,6 +6852,8 @@ snapshots:
   urlpattern-polyfill@8.0.2: {}
 
   util-deprecate@1.0.2: {}
+
+  valibot@0.30.0: {}
 
   validate-npm-package-license@3.0.4:
     dependencies:

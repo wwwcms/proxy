@@ -30,21 +30,21 @@ export default defineEventHandler(async event => {
     if (useStr) {
       ps.forEach((item, i) => {
         if (!item.includes(useStr) && item.includes('.ts')) {
-          const replacedString: string = ps[i-1].replace(/(#EXTINF:)\d+(\.\d+)?/g, '$10.1');
+          const replacedString: string = ps[i - 1].replace(/(#EXTINF:)\d+(\.\d+)?/g, '$10.1')
           if (ps[i - 2] === '#EXT-X-DISCONTINUITY') {
             ps.splice(i, 1, 'ziye')
-            ps.splice(i - 1, 1, 'ziye');
-            ps.splice(i-2, 1, 'ziye')
+            ps.splice(i - 1, 1, 'ziye')
+            ps.splice(i - 2, 1, 'ziye')
           }
           if (ps[i - 1].includes('#EXTINF')) {
-            console.log(ps[i-1], i, ps[i], replacedString)
+            console.log(ps[i - 1], i, ps[i], replacedString)
             ps.splice(i, 1, 'ziye')
             ps.splice(i - 1, 1, 'ziye')
           }
         }
       })
     }
-    return ps
+    return ps.filter(item => item !== 'ziye')
   }
 
   async function checkFileExistence(path: string) {
@@ -77,7 +77,7 @@ export default defineEventHandler(async event => {
       }).filter(item => item).join('\n')
       try {
         const { name, nid, sid } = query
-        const filePath = `${path.join(process.cwd(), `/m3u8/${name}/${sid || 1}/${nid}.m3u8`)}`
+        const filePath = `${path.join(process.cwd(), `/ziyuan/${name}/${sid || 1}/${nid}.m3u8`)}`
         const exist = await checkFileExistence(filePath)
         if (exist)
           return m3u8
@@ -92,7 +92,8 @@ export default defineEventHandler(async event => {
         console.error(err)
       }
       return m3u8
-    } else {
+    }
+    else {
       return data
     }
   }

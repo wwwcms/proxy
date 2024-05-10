@@ -76,9 +76,9 @@ export default defineEventHandler(async event => {
       try {
         const { name, nid, sid } = query
         const filePath = `${path.join(process.cwd(), `/ziyuan/${name}/${sid || 1}/${nid}.m3u8`)}`
-        const exist = await checkFileExistence(filePath)
-        if (exist)
-          return m3u8
+        // const exist = await checkFileExistence(filePath)
+        // if (exist)
+        //   return m3u8
         const dirPath = path.dirname(filePath)
         if (!fs.existsSync(dirPath))
           fs.mkdirSync(dirPath, { recursive: true })

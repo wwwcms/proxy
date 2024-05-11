@@ -10,28 +10,29 @@ export default defineEventHandler(async event => {
     const html: any = await $fetch(`https://dm84.tv/v/${id}.html`)
     const $ = load(html)
     const play_list = $('.play_list')
-    const urls: string[] = []
+    const urls: { name: string, url: string }[] = []
     for (let i = 0; i < play_list.length; i++) {
       const item = $(`${play_list.eq(i)} li`)
       for (let j = 0; j < item.length; j++) {
         for (let k = 0; k < item.eq(j).find('a').length; k++) {
-          const url = item.eq(j).find('a').eq(k).attr('href')
-          urls.push(url!)
+          const url = item.eq(j).find('a').eq(k).attr('href')!
+          const name = item.eq(j).find('a').eq(k).text()
+          urls.push({ name, url })
         }
       }
     }
     const start = (+query.start! || 0) as number
     const end = (+query.end! || 0) as number
     const data = start && start !== -1 && end ? urls.slice(start, end) : start && start !== -1 ? urls.slice(start) : urls
-    const plays: any[] = await Promise.all(data.map(url => $fetch(`https://dm84.tv${url}`)))
+    const plays: any[] = await Promise.all(data.map(url => $fetch(`https://dm84.tv${url.url}`)))
     const playArr = plays.reduce((prev: any, cur: any, i) => {
-      const url = urls[i]
+      const url = urls[i].url
       const arr = url.split(/-|\.html|\//)
       const num = +arr[arr.length - 2]
       const sid = +arr[arr.length - 3]
       const $ = load(cur)
       const src = $('iframe').attr('src')
-      const urli = `第${num}集$${src}\n`
+      const urli = `${!Number(urls[i].name) ? urls[i].name : `第${num}集`}$${src}\n`
       prev[sid] = prev[sid] ? [...prev[sid], urli] : [urli]
       return prev
     }, {})

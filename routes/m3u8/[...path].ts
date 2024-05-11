@@ -83,7 +83,7 @@ export default defineEventHandler(async event => {
         if (!fs.existsSync(dirPath))
           fs.mkdirSync(dirPath, { recursive: true })
 
-        fs.writeFileSync(filePath, m3u8)
+        fs.writeFileSync(filePath, m3u8, { flag: 'w' })
         console.log('写入成功', filePath)
       }
       catch (err) {

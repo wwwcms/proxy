@@ -12,9 +12,9 @@ async function downLoadImage(fileURL: string, downloadPath: string) {
       response.pipe(file)
       file
         .on('finish', (res: unknown) => {
-          file.close()
           console.log('文件已经下载到本地')
           resolve(res)
+          file.close()
         })
         .on('error', error => {
           reject(error)
@@ -52,7 +52,7 @@ export default defineEventHandler(async event => {
         Referer: `https://www.anfuns.cc${url.url}`
       }
     })))
-    const play = plays.reduce((prev: any, cur: any, i) => {
+    const playArr = plays.reduce((prev: any, cur: any, i) => {
       const play_aaa = cur.match(/var player_aaaa=(.*?)<\/script>/g)
       const playobj = play_aaa[0].replace(/var player_aaaa=/g, '').replace(/<\/script>/g, '')
       const { encrypt, url: playurl } = JSON.parse(playobj)
@@ -73,6 +73,10 @@ export default defineEventHandler(async event => {
       prev[sid] = prev[sid] ? [...prev[sid], urli] : [urli]
       return prev
     }, {})
+
+    const play = Object.keys(playArr).map(item => {
+      return playArr[item]
+    })
 
     console.log('ok', play)
     return play

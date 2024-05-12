@@ -45,15 +45,15 @@ export default defineEventHandler(async event => {
     return ps.filter(item => item !== 'ziye')
   }
 
-  async function checkFileExistence(path: string) {
-    return new Promise(resolve => {
-      fs.access(path, err => {
-        if (err)
-          resolve(false)
-        resolve(true)
-      })
-    })
-  }
+  // async function checkFileExistence(path: string) {
+  //   return new Promise(resolve => {
+  //     fs.access(path, err => {
+  //       if (err)
+  //         resolve(false)
+  //       resolve(true)
+  //     })
+  //   })
+  // }
 
   try {
     const { path: m3u8url } = event.context.params || {}

@@ -2,8 +2,8 @@ import { load } from 'cheerio'
 
 function getParams(str: string) {
   const inputString = str
-  const regexForNumber = /\((\d+)\,/
-  const regexForHex = /\'([A-F0-9]+)\'/
+  const regexForNumber = /\((\d+),/
+  const regexForHex = /'([A-F0-9]+)'/
 
   const matchNumber = inputString.match(regexForNumber)
   const matchHex = inputString.match(regexForHex)
@@ -28,7 +28,7 @@ export default defineEventHandler(async event => {
       const title = item.find('h2').text()
       item.find('h2').remove()
       // 移除所有html标签, p标的替换成 \n\n
-      const content = item.html()?.replace(/<br>/g, '\n').replace(/<p>/g, '\n\n').replace(/<\/p>/g, '\n\n').replace(/<[^>]+>/g, '').replace(/▲/g, '').trim().split(/\n|\n\n|\n\n\n/).map(item => item.trim()).join('\n').replace(/\n\n\n/g, '\n\n')
+      const content = item.html()?.replace(/<br>/g, '\n').replace(/<p>/g, '\n\n').replace(/<\/p>/g, '\n\n').replace(/<[^>]+>/g, '').replace(/▲/g, '').trim().split(/\n/).map(item => item.trim()).join('\n').split(/\n\n/).map(item => item.trim()).join('\n').split(/\n\n\n/).map(item => item.trim()).join('\n').replace(/\n\n\n/g, '\n\n')
       const cankao = $('.cankao')
       cankao.find('p').eq(0).remove()
       const literature = cankao.html()?.replace(/<[^>]+>/g, '').replace(/▲/g, '').trim().split('\n\n\n').map(item => item.replace(/\n/g, '')).join('\n')
@@ -43,7 +43,7 @@ export default defineEventHandler(async event => {
         const conty = $('.contyishang')
         const title = conty.find('h2').text()
         conty.find('h2').remove()
-        const content = $('.contyishang').html()?.replace(/<br>/g, '\n').replace(/<p>/g, '\n').replace(/<\/p>/g, '\n').replace(/<[^>]+>/g, '').replace(/▲/g, '').trim().split(/\n|\n\n|\n\n\n/).map(item => item.trim()).join('\n').replace(/\n\n\n/g, '\n\n')
+        const content = $('.contyishang').html()?.replace(/<br>/g, '\n').replace(/<p>/g, '\n').replace(/<\/p>/g, '\n').replace(/<[^>]+>/g, '').replace(/▲/g, '').trim().split(/\n/).map(item => item.trim()).join('\n').split(/\n\n/).map(item => item.trim()).join('\n').split(/\n\n\n/).map(item => item.trim()).join('\n').replace(/\n\n\n/g, '\n\n')
         const cankao = $('.cankao')
         cankao.find('p').eq(0).remove()
         const literature = cankao.html()?.replace(/<[^>]+>/g, '').replace(/▲/g, '').trim().split('\n\n\n').map(item => item.replace(/\n/g, '')).join('\n')

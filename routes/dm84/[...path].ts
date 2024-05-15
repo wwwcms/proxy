@@ -23,6 +23,7 @@ export default defineEventHandler(async event => {
     }
     const start = (+query.start! || 0) as number
     const end = (+query.end! || 0) as number
+    const n = (+query.num! || 0) as number // 从第几集开始
     const data = start && start !== -1 && end ? urls.slice(start, end) : start && start !== -1 ? urls.slice(start) : urls
     const plays: any[] = await Promise.all(data.map(url => $fetch(`https://dm84.tv${url.url}`)))
     const playArr = plays.reduce((prev: any, cur: any, i) => {
@@ -32,7 +33,7 @@ export default defineEventHandler(async event => {
       const sid = +arr[arr.length - 3]
       const $ = load(cur)
       const src = $('iframe').attr('src')
-      const urli = `${!Number(urls[i].name) ? urls[i].name : `第${num}集`}$${src}\n`
+      const urli = `${!Number(urls[i].name) ? urls[i].name : `第${+num + n}集`}$${src}\n`
       prev[sid] = prev[sid] ? [...prev[sid], urli] : [urli]
       return prev
     }, {})

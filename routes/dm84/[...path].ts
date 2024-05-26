@@ -21,44 +21,51 @@ export default defineEventHandler(async event => {
         }
       }
     }
-    const start = (+query.start! || 0) as number
-    const end = (+query.end! || 0) as number
-    const n = (+query.num! || 0) as number // 从第几集开始
-    const data = start && start !== -1 && end ? urls.slice(start, end) : start && start !== -1 ? urls.slice(start) : urls
-    const plays: any[] = await Promise.all(data.map(url => $fetch(`https://dm84.tv${url.url}`)))
-    const playArr = plays.reduce((prev: any, cur: any, i) => {
-      const url = urls[i].url
-      const arr = url.split(/-|\.html|\//)
-      const num = +arr[arr.length - 2]
-      const sid = +arr[arr.length - 3]
-      const $ = load(cur)
-      const src = $('iframe').attr('src')
-      const urli = `${!Number(urls[i].name) ? urls[i].name : `第${+num + n}集`}$${src}\n`
-      prev[sid] = prev[sid] ? [...prev[sid], urli] : [urli]
-      return prev
-    }, {})
-    const play = Object.keys(playArr).map(item => {
-      return query.sort ? playArr[item] : playArr[item].reverse()
-    })
 
-    if (start === -1 || end === -1) {
-      const urlArr = []
-      let n = 1
-      for await (const url of end === -1 ? play[1] : play[0]) {
-        const d = url.replace(/\n/g, '').split('$')[1]
-        await page.goto(d, { waitUntil: 'networkidle0', timeout: 60000000 })
-        const html = await page.content()
-        const $ = load(html)
-        const src = $('video').attr('src')
-        urlArr.push(`第${n}集$${src}${urls.length === n ? '' : '\n'}`)
-        n++
+    try {
+      const start = (+query.start! || 0) as number
+      const end = (+query.end! || 0) as number
+      const n = (+query.num! || 0) as number // 从第几集开始
+      const data = start !== -1 && end ? urls.slice(start, end) : start !== -1 ? urls.slice(start) : urls
+
+      console.log(data, 'urls', start, 'start', end, 'end')
+      const plays: any[] = await Promise.all(data.map(url => $fetch(`https://dm84.tv${url.url}`)))
+      const playArr = plays.reduce((prev: any, cur: any, i) => {
+        const url = urls[i].url
+        const arr = url.split(/-|\.html|\//)
+        const num = +arr[arr.length - 2]
+        const sid = +arr[arr.length - 3]
+        const $ = load(cur)
+        const src = $('iframe').attr('src')
+        const urli = `${!Number(urls[i].name) ? urls[i].name : `第${+num + n}集`}$${src}\n`
+        prev[sid] = prev[sid] ? [...prev[sid], urli] : [urli]
+        return prev
+      }, {})
+      const play = Object.keys(playArr).map(item => {
+        return query.sort ? playArr[item] : playArr[item].reverse()
+      })
+      if (start === -1 || end === -1 || (start === -1 && end)) {
+        const urlArr = []
+        let n = 1
+        for await (const url of end === -1 ? play[1] : play[0]) {
+          const d = url.replace(/\n/g, '').split('$')[1]
+          await page.goto(d, { waitUntil: 'networkidle0', timeout: 60000000 })
+          const html = await page.content()
+          const $ = load(html)
+          const src = $('video').attr('src')
+          urlArr.push(`第${n}集$${src}${urls.length === n ? '' : '\n'}`)
+          n++
+        }
+        console.log('ok', urlArr)
+        return [urlArr]
       }
-      console.log('ok', urlArr)
-      return [urlArr]
-    }
 
-    console.log('ok', play)
-    return play
+      console.log('ok', play)
+      return play
+    }
+    catch (error) {
+      console.log(error)
+    }
   }
   catch (e: any) {
     const status = e?.response?.status || 500

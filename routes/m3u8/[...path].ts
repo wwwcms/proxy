@@ -1,6 +1,4 @@
 import https from 'node:https'
-import fs from 'node:fs'
-import path from 'node:path'
 
 export default defineEventHandler(async event => {
   const query = getQuery(event)
@@ -63,7 +61,6 @@ export default defineEventHandler(async event => {
       const ids = http.split('index.m3u8')
       const datas = data.split('\n').filter(item => item.includes('.m3u8'))
       const url = ids[0] + datas[0]
-      console.log(url, 'url')
       const play = await getUrl(url)
 
       const arr = formatData(play)
@@ -73,22 +70,22 @@ export default defineEventHandler(async event => {
         else
           return item
       }).filter(item => item).join('\n')
-      try {
-        const { name, nid, sid } = query
-        const filePath = `${path.join(process.cwd(), `/ziyuan/${name}/${sid || 1}/${nid}.m3u8`)}`
-        // const exist = await checkFileExistence(filePath)
-        // if (exist)
-        //   return m3u8
-        const dirPath = path.dirname(filePath)
-        if (!fs.existsSync(dirPath))
-          fs.mkdirSync(dirPath, { recursive: true })
+      // try {
+      //   const { name, nid, sid } = query
+      //   const filePath = `${path.join(process.cwd(), `/ziyuan/${name}/${sid || 1}/${nid}.m3u8`)}`
+      //   // const exist = await checkFileExistence(filePath)
+      //   // if (exist)
+      //   //   return m3u8
+      //   const dirPath = path.dirname(filePath)
+      //   if (!fs.existsSync(dirPath))
+      //     fs.mkdirSync(dirPath, { recursive: true })
 
-        fs.writeFileSync(filePath, m3u8, { flag: 'w' })
-        console.log('写入成功', filePath)
-      }
-      catch (err) {
-        console.error(err)
-      }
+      //   fs.writeFileSync(filePath, m3u8, { flag: 'w' })
+      //   console.log('写入成功', filePath)
+      // }
+      // catch (err) {
+      //   console.error(err)
+      // }
       return m3u8
     }
     else {

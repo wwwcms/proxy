@@ -44,16 +44,21 @@ export default defineEventHandler(async event => {
       const play = Object.keys(playArr).map(item => {
         return query.sort ? playArr[item] : playArr[item].reverse()
       })
-      if (start === -1 || end === -1 || (start === -1 && end)) {
+
+      console.log(play[2], 'play')
+      // end 等-1 第2个资源，end 等-2 第3个资源，end 无值 第1个资源
+      if (start === -1 || end === -1 || end === -2 || (start === -1 && end)) {
         const urlArr = []
         let n = 1
-        for await (const url of end === -1 ? play[1] : play[0]) {
-          const d = url.replace(/\n/g, '').split('$')[1]
+        for await (const url of play[end === -1 ? 1 : end === -2 ? 2 : 0]) {
+          const arr = url.replace(/\n/g, '').split('$')
+          const name = arr[0]
+          const d = arr[1]
           await page.goto(d, { waitUntil: 'networkidle0', timeout: 60000000 })
           const html = await page.content()
           const $ = load(html)
           const src = $('video').attr('src')
-          urlArr.push(`第${n}集$${src}${urls.length === n ? '' : '\n'}`)
+          urlArr.push(`${name}$${src}${urls.length === n ? '' : '\n'}`)
           n++
         }
         console.log('ok', urlArr)

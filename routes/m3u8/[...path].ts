@@ -1,7 +1,7 @@
 import https from 'node:https'
 
 export default defineEventHandler(async event => {
-  const query = getQuery(event)
+  // const query = getQuery(event)
   const getUrl = (path: string) => {
     return new Promise<string>((resolve, reject) => {
       https.get(path, res => {

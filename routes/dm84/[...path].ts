@@ -7,7 +7,7 @@ export default defineEventHandler(async event => {
   const query = getQuery(event)
   const start = (+query.start! || 0) as number
   const end = (+query.end! || 0) as number
-  const n = (+query.num! || 0) as number // 从第几集开始
+  const n = (+query.n! || 0) as number // 从第几集开始
   const sort = (+query.sort! || 0) as number // -1 正序 不填为倒
   const ep = (+query.ep! || 0) as number // 从第几集开始
   try {
@@ -83,7 +83,7 @@ export default defineEventHandler(async event => {
           const sid = +arr[arr.length - 3]
           const $ = load(cur)
           const src = $('iframe').attr('src')
-          const urli = `${Number(data[i].name) ? `第${data[i].name}集` : !Number(data[i].name) ? data[i].name : `第${+num + n}集`}$${src}\n`
+          const urli = `${Number(data[i].name) ? `第${+data[i].name + n}集` : !Number(data[i].name) ? data[i].name : `第${+num + n}集`}$${src}\n`
           prev[sid] = prev[sid] ? [...prev[sid], urli] : [urli]
           return prev
         }, {})

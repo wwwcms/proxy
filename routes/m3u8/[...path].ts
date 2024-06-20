@@ -27,7 +27,9 @@ export default defineEventHandler(async event => {
     const useStr = findOneTs?.substring(0, 13)
     if (useStr) {
       ps.forEach((item, i) => {
-        if (!item.includes(useStr) && item.includes('.ts')) {
+        const str = item.split('.ts')[0] || ''
+        const max = Number.parseInt(str.substring(str.length - 6) || '0')
+        if ((!item.includes(useStr) && item.includes('.ts')) || max > 10000 || item.length > 20) {
           if (ps[i - 2] === '#EXT-X-DISCONTINUITY') {
             ps.splice(i, 1, 'ziye')
             ps.splice(i - 1, 1, 'ziye')

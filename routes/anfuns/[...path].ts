@@ -82,6 +82,7 @@ export default defineEventHandler(async event => {
     return play
   }
   catch (e: any) {
+    console.log(e)
     const status = e?.response?.status || 500
     setResponseStatus(event, status)
     return {

@@ -20,13 +20,14 @@ export default defineEventHandler(async event => {
     const json = JSON.parse(body)
     const videos = json.result.videos || ''
     const regex = /^\d|^.\d/
-    const v1 = buildVideos(videos).filter(i => regex.test(i[0]))
+    const v1 = buildVideos(videos).filter(i => regex.test(i[0]) || (i[0].includes('第') && i[0].includes('集')))
     const v2 = buildVideos(videos).filter(i => i[0] === '二')
     const v3 = buildVideos(videos).filter(i => i[0] === '三')
     const video = [v1, v2, v3]
     const videoList = video.map((i, l) => {
       return i.map((j, k) => {
-        return `第${k + 1}集 ${removeDigitsInFirstTwoChars(l === 0 ? j[0] : video[0][k][0]).trim()}$${j[1]}?filename=1.mp4\n`
+        const v = j[1]?.replace('https://sf16-sg.larksuitecdn.com', 'https://lf16-secsdk.bitssec.com')
+        return `第${k + 1}集 ${removeDigitsInFirstTwoChars(l === 0 ? j[0] : video[0][k][0]).trim()}$${v}?filename=1.mp4\n`
       })
     })
     return videoList

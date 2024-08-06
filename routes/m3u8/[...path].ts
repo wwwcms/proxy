@@ -29,7 +29,19 @@ export default defineEventHandler(async event => {
       ps.forEach((item, i) => {
         const str = item.includes('.ts') ? item.split('.ts')[0] || '' : ''
         const max = item.includes('.ts') ? Number.parseInt(str.substring(str.length - 6) || '0') : 0
-        if ((!item.includes(useStr) || max > 10000 || item.length > 20) && item.includes('.ts')) {
+        const time = item.includes('6.666667') || item.includes('3.333333')
+        if (time) {
+          if (ps[i - 1] === '#EXT-X-DISCONTINUITY') {
+            ps.splice(i + 1, 1, 'ziye')
+            ps.splice(i, 1, 'ziye')
+            ps.splice(i - 1, 1, 'ziye')
+          }
+          if (ps[i].includes('#EXTINF')) {
+            ps.splice(i, 1, 'ziye')
+            ps.splice(i + 1, 1, 'ziye')
+          }
+        }
+        if ((!item.includes(useStr) || max > 10000 || item.length > 20) && item.includes('.ts') && str.length !== 32) {
           if (ps[i - 2] === '#EXT-X-DISCONTINUITY') {
             ps.splice(i, 1, 'ziye')
             ps.splice(i - 1, 1, 'ziye')
@@ -46,7 +58,8 @@ export default defineEventHandler(async event => {
   }
 
   try {
-    const http = await getUrl(query.play as string)
+    const link = query.link as string
+    const http = link || await getUrl(query.play as string)
     const data = await getUrl(http)
     if (data && http.includes('index.m3u8')) {
       const ids = http.split('index.m3u8')
@@ -68,6 +81,7 @@ export default defineEventHandler(async event => {
     }
   }
   catch (e: any) {
+    console.log(e, '333')
     const status = e?.response?.status || 500
     setResponseStatus(event, status)
     return {

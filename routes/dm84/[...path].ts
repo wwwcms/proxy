@@ -66,7 +66,7 @@ export default defineEventHandler(async event => {
           await page.goto(d, { waitUntil: 'networkidle0', timeout: 60000000 })
           const html = await page.content()
           const $ = load(html)
-          const src = $('video').attr('src')
+          const src = $('video').attr('src')?.replace(/sf16-scmcdn.larksuitecdn.com|p16-hera-va.larksuitecdn.com/, 'lf16-fe.resso.me')
           urlArr.push(`${name}$${src}${playArr.length === i ? '' : '\n'}`)
           i++
         }

@@ -40,7 +40,7 @@ export default defineEventHandler(async event => {
       const $ = load(html)
       const src = $('#fed-play-iframe').attr('src')
       const h = src?.split('url=')
-      play.push(`第${n}集$${h?.[1]}${urls.length === n ? '' : '\n'}`)
+      play.push(`第${n}集$${h?.[1]?.replace('sf16-sg.larksuitecdn.com', 'lf16-fe.resso.me')}${urls.length === n ? '' : '\n'}`)
     }
 
     await page.close()

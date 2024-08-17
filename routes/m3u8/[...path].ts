@@ -21,7 +21,7 @@ export default defineEventHandler(async event => {
     })
   }
 
-  const formatData = (play: string) => {
+  const formatData = (play: string, url: string) => {
     const ps = play.split('\n')
     const findOneTs = ps.find(item => item.includes('.ts'))
     const useStr = findOneTs?.substring(0, 13)
@@ -30,7 +30,7 @@ export default defineEventHandler(async event => {
         const str = item.includes('.ts') ? item.split('.ts')[0] || '' : ''
         const max = item.includes('.ts') ? Number.parseInt(str.substring(str.length - 6) || '0') : 0
         const time = item.includes('6.666667') || item.includes('3.333333')
-        if (time) {
+        if (time && url.includes('ffzy')) {
           if (ps[i - 1] === '#EXT-X-DISCONTINUITY') {
             ps.splice(i + 1, 1, 'ziye')
             ps.splice(i, 1, 'ziye')
@@ -41,7 +41,7 @@ export default defineEventHandler(async event => {
             ps.splice(i + 1, 1, 'ziye')
           }
         }
-        if ((!item.includes(useStr) || max > 10000 || item.length > 20) && item.includes('.ts') && str.length !== 32) {
+        if (((!item.includes(useStr) || max > 10000 || item.length > 20) && item.includes('.ts') && str.length !== 32) || (str.length === 32 && item.includes('.ts') && (url.includes('lz') || url.includes('yzzy') || url.includes('play-') || url.includes('-play')))) {
           if (ps[i - 2] === '#EXT-X-DISCONTINUITY') {
             ps.splice(i, 1, 'ziye')
             ps.splice(i - 1, 1, 'ziye')
@@ -67,7 +67,7 @@ export default defineEventHandler(async event => {
       const url = ids[0] + datas[0]
       const play = await getUrl(url)
 
-      const arr = formatData(play)
+      const arr = formatData(play, url)
       const m3u8 = arr.map(item => {
         if (item.includes('.ts'))
           return `${ids[0]}${datas[0].split(/mixed.m3u8|index.m3u8/)[0]}${item}`

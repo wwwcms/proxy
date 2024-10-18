@@ -1,5 +1,5 @@
-import puppeteer from 'puppeteer'
 import { load } from 'cheerio'
+import puppeteer from 'puppeteer'
 
 export default defineEventHandler(async event => {
   const query = getQuery(event)

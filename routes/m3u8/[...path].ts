@@ -1,4 +1,5 @@
 import https from 'node:https'
+import { getUrlParams2, js_decrypt } from '~/utils'
 
 export default defineEventHandler(async event => {
   const query = getQuery(event)
@@ -21,6 +22,26 @@ export default defineEventHandler(async event => {
     })
   }
 
+  function ffzy(ps: string[], i: number) {
+    if (ps[i].includes('5.800000')) {
+      if (ps[i + 2].includes('3.333333') && ps[i + 4].includes('4.300000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.333333')) {
+        return true
+      }
+      return false
+    }
+    return false
+  }
+
+  function ffzy2(ps: string[], i: number) {
+    if (ps[i].includes('6.600000')) {
+      if (ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.200000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.800000')) {
+        return true
+      }
+      return false
+    }
+    return false
+  }
+
   const formatData = (play: string, url: string) => {
     const ps = play.split('\n')
     const findOneTs = ps.find(item => item.includes('.ts'))
@@ -29,19 +50,35 @@ export default defineEventHandler(async event => {
       ps.forEach((item, i) => {
         const str = item.includes('.ts') ? item.split('.ts')[0] || '' : ''
         const max = item.includes('.ts') ? Number.parseInt(str.substring(str.length - 6) || '0') : 0
-        const time = item.includes('6.666667') || item.includes('3.333333')
-        if (time && url.includes('ffzy')) {
-          if (ps[i - 1] === '#EXT-X-DISCONTINUITY') {
-            ps.splice(i + 1, 1, 'ziye')
-            ps.splice(i, 1, 'ziye')
-            ps.splice(i - 1, 1, 'ziye')
-          }
-          if (ps[i].includes('#EXTINF')) {
-            ps.splice(i, 1, 'ziye')
-            ps.splice(i + 1, 1, 'ziye')
-          }
+        // const time = item.includes('6.666667') || item.includes('3.333333')
+        const ffzy20241011 = ffzy(ps, i)
+        const ffzy20241015 = ffzy2(ps, i)
+        if ((ffzy20241011 || ffzy20241015) && url.includes('ffzy')) {
+          // console.log(ffzy20241011, 'ffzy20241011')
+          ps.splice(i, 1, 'ziye')
+          ps.splice(i - 1, 1, 'ziye')
+          ps.splice(i + 1, 1, 'ziye')
+          ps.splice(i + 2, 1, 'ziye')
+          ps.splice(i + 3, 1, 'ziye')
+          ps.splice(i + 4, 1, 'ziye')
+          ps.splice(i + 5, 1, 'ziye')
+          ps.splice(i + 6, 1, 'ziye')
+          ps.splice(i + 7, 1, 'ziye')
+          ps.splice(i + 8, 1, 'ziye')
+          ps.splice(i + 9, 1, 'ziye')
         }
-        if (((!item.includes(useStr) || max > 10000 || item.length > 20) && item.includes('.ts') && str.length !== 32) || (str.length === 32 && item.includes('.ts') && (url.includes('lz') || url.includes('yzzy') || url.includes('play-') || url.includes('-play')))) {
+        // if (time && url.includes('ffzy')) {
+        //   if (ps[i - 1] === '#EXT-X-DISCONTINUITY') {
+        //     ps.splice(i + 1, 1, 'ziye')
+        //     ps.splice(i, 1, 'ziye')
+        //     ps.splice(i - 1, 1, 'ziye')
+        //   }
+        //   if (ps[i].includes('#EXTINF')) {
+        //     ps.splice(i, 1, 'ziye')
+        //     ps.splice(i + 1, 1, 'ziye')
+        //   }
+        // }
+        if (((!item.includes(useStr) || max > 10000 || item.length > 20) && item.includes('.ts') && str.length !== 32) || (str.length === 32 && item.includes('.ts') && (url.includes('lz') || url.includes('yzzy') || ((url.includes('play-') || url.includes('-play')) && !url.includes('ffzy'))))) {
           if (ps[i - 2] === '#EXT-X-DISCONTINUITY') {
             ps.splice(i, 1, 'ziye')
             ps.splice(i - 1, 1, 'ziye')
@@ -57,9 +94,18 @@ export default defineEventHandler(async event => {
     return ps.filter(item => item !== 'ziye')
   }
 
+  const getM3u8Url = () => {
+    const params = getUrlParams2(query.play as string)
+    const { key, iv, url } = params
+    const data = url.replace(/ /g, '+')
+    const http = js_decrypt(data, key, iv)
+    // console.log(http, 'http222', params)
+    return http
+  }
+
   try {
     const link = query.link as string
-    const http = link || await getUrl(query.play as string)
+    const http = link || getM3u8Url()
     const data = await getUrl(http)
     if (data && http.includes('index.m3u8')) {
       const ids = http.split('index.m3u8')

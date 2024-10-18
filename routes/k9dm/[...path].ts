@@ -40,7 +40,7 @@ export default defineEventHandler(async event => {
       const $ = load(html)
       const src = $('#fed-play-iframe').attr('src')
       const h = src?.split('url=')
-      play.push(`第${n}集$${h?.[1]?.replace('sf16-sg.larksuitecdn.com', 'lf16-fe.resso.me')}${urls.length === n ? '' : '\n'}`)
+      play.push(`第${n}集$${h?.[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-fe.resso.me/, 'sf16-cgfe-sg.ibytedtos.com')}${urls.length === n ? '' : '\n'}`)
     }
 
     await page.close()
@@ -49,6 +49,7 @@ export default defineEventHandler(async event => {
     return play
   }
   catch (e: any) {
+    console.log(e, '333')
     const status = e?.response?.status || 500
     setResponseStatus(event, status)
     return {

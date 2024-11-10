@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.12.3",
   "engines": {
-    "node": "20.18.0"
+    "node": "22.11.0"
   },
   "scripts": {
     "dev": "nitropack dev",
@@ -20,12 +20,12 @@
     "@dxhuii/eslint-config": "^2.2.0",
     "@types/crypto-js": "^4.2.2",
     "cheerio": "1.0.0",
-    "eslint": "^9.12.0",
+    "eslint": "^9.14.0",
     "eslint-plugin-format": "^0.1.2",
     "lint-staged": "^15.2.10",
-    "nitropack": "^2.9.7",
+    "nitropack": "^2.10.4",
     "ofetch": "^1.4.1",
-    "puppeteer": "^23.6.0",
+    "puppeteer": "^23.7.1",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.6.3"
   },

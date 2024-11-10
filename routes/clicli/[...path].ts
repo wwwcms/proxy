@@ -1,6 +1,6 @@
 export default defineEventHandler(async event => {
   function buildVideos(str: string) {
-    return str.split('\n').map((v, i) => {
+    return str.split('\n').map(v => {
       const [title, content] = v.split('$')
       return [title, content]
     }).filter(i => i.length > 0 && i[1] != null)

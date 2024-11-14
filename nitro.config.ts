@@ -5,9 +5,12 @@ export default defineNitroConfig({
     '/**': { cors: true }
     // '/tmdb/**': { swr: true },
   },
+
   runtimeConfig: {
     tmdb: {
       apiKey: 'cc06d337ffde84712a0fe317144d2592'
     }
-  }
+  },
+
+  compatibilityDate: '2024-11-10'
 })

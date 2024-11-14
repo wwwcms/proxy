@@ -34,7 +34,9 @@ export default defineEventHandler(async event => {
 
   function ffzy2(ps: string[], i: number) {
     if (ps[i].includes('6.600000')) {
-      if (ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.200000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.800000')) {
+      const t1 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.200000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.800000')
+      const t2 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.400000')
+      if (t1 || t2) {
         return true
       }
       return false

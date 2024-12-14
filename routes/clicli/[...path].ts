@@ -26,7 +26,7 @@ export default defineEventHandler(async event => {
     const video = [v1, v2, v3]
     const videoList = video.map((i, l) => {
       return i.map((j, k) => {
-        const v = j[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-secsdk.bitssec.com|lf16-box.feishucdn.com|sf19-sg.larksuitecdn.com|sf21-sg.larksuitecdn.com/, 'sf16-cgfe-sg.ibytedtos.com')
+        const v = j[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-secsdk.bitssec.com|lf16-box.feishucdn.com|sf19-sg.larksuitecdn.com|sf21-sg.larksuitecdn.com/, 'sf16-sg-default.akamaized.net')
         return `第${k + 1}集 ${removeDigitsInFirstTwoChars(l === 0 ? j[0] : video[0][k][0]).trim()}$${v}?filename=1.mp4\n`
       })
     })

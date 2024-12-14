@@ -23,8 +23,9 @@ export default defineEventHandler(async event => {
   }
 
   function ffzy(ps: string[], i: number) {
-    if (ps[i].includes('5.800000')) {
-      if (ps[i + 2].includes('3.333333') && ps[i + 4].includes('4.300000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.333333')) {
+    if (ps[i].includes('6.466667')) {
+      const t1 = ps[i + 2].includes('1.833333') && ps[i + 4].includes('6.666667') && ps[i + 6].includes('3.033333')
+      if (t1) {
         return true
       }
       return false
@@ -33,10 +34,12 @@ export default defineEventHandler(async event => {
   }
 
   function ffzy2(ps: string[], i: number) {
-    if (ps[i].includes('6.600000')) {
+    if (ps[i].includes('6.600000') || ps[i].includes('5.800000') || ps[i].includes('4.666667')) {
       const t1 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.200000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.800000')
       const t2 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.400000')
-      if (t1 || t2) {
+      const t3 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('4.300000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.333333')
+      const t4 = ps[i + 2].includes('5.433333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.900000') && ps[i + 8].includes('3.233333')
+      if (t1 || t2 || t3 || t4) {
         return true
       }
       return false
@@ -53,9 +56,9 @@ export default defineEventHandler(async event => {
         const str = item.includes('.ts') ? item.split('.ts')[0] || '' : ''
         const max = item.includes('.ts') ? Number.parseInt(str.substring(str.length - 6) || '0') : 0
         // const time = item.includes('6.666667') || item.includes('3.333333')
-        const ffzy20241011 = ffzy(ps, i)
+        const ffzy20241115 = ffzy(ps, i)
         const ffzy20241015 = ffzy2(ps, i)
-        if ((ffzy20241011 || ffzy20241015) && url.includes('ffzy')) {
+        if ((ffzy20241015) && url.includes('ffzy')) {
           // console.log(ffzy20241011, 'ffzy20241011')
           ps.splice(i, 1, 'ziye')
           ps.splice(i - 1, 1, 'ziye')
@@ -68,6 +71,18 @@ export default defineEventHandler(async event => {
           ps.splice(i + 7, 1, 'ziye')
           ps.splice(i + 8, 1, 'ziye')
           ps.splice(i + 9, 1, 'ziye')
+        }
+
+        if (ffzy20241115 && url.includes('ffzy')) {
+          ps.splice(i, 1, 'ziye')
+          ps.splice(i - 1, 1, 'ziye')
+          ps.splice(i + 1, 1, 'ziye')
+          ps.splice(i + 2, 1, 'ziye')
+          ps.splice(i + 3, 1, 'ziye')
+          ps.splice(i + 4, 1, 'ziye')
+          ps.splice(i + 5, 1, 'ziye')
+          ps.splice(i + 6, 1, 'ziye')
+          ps.splice(i + 7, 1, 'ziye')
         }
         // if (time && url.includes('ffzy')) {
         //   if (ps[i - 1] === '#EXT-X-DISCONTINUITY') {

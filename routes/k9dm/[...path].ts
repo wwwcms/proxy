@@ -11,7 +11,7 @@ export default defineEventHandler(async event => {
     const nid = Number.parseInt(query.nid as string)
     if (query.nid) {
       for (let i = 1; i <= nid; i++)
-        urls.push(`/index.php/vod/play/id/${id}/sid/${query.sid}/nid/${i}.html`)
+        urls.push(`/Comicplay/${id}-${query.sid}-${i}.html`)
     }
     else {
       await page.goto(`https://k9dm.com/index.php/vod/play/id/${id}/sid/${query.sid}/nid/1.html`, { waitUntil: 'networkidle0', timeout: 60000000 })
@@ -33,15 +33,33 @@ export default defineEventHandler(async event => {
     const play: string[] = []
     console.log(urls, 'urls')
     for await (const url of urls) {
-      const u = url.split(/\/|.html/)
+      const u = url.split(/-|.html/)
       const n = +u[u.length - 2]
-      await page.goto(`https://k9dm.com${url}`, { waitUntil: 'networkidle0', timeout: 60000000 })
+      await page.goto(`https://www.eacg1.com/${url}`, { waitUntil: 'networkidle0', timeout: 60000000 })
       const html = await page.content()
       const $ = load(html)
       const src = $('#fed-play-iframe').attr('src')
       const h = src?.split('url=')
-      play.push(`第${n}集$${h?.[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-fe.resso.me/, 'sf16-cgfe-sg.ibytedtos.com')}${urls.length === n ? '' : '\n'}`)
+      const http = h?.[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-fe.resso.me|sf16-sg-default.akamaized.net/, 'sf16-cgfe-sg.ibytedtos.com')
+      if (src?.includes('eacg')) {
+        const html: any = await $fetch(`https://www.eacg1.com${src}`, {
+          referrer: `https://www.eacg1.com${src}`
+        })
+        const iframeSrc = html.match(/https:\/\/xx\.cos1234\.com\/eacg\.php\?url=[^'"]+/)[0]
+        console.log(iframeSrc, 'iframeSrc')
+        const htmlAcg: any = await $fetch(iframeSrc, {
+          referrer: 'https://www.eacg1.com/'
+        })
+        console.log(htmlAcg, 'htmlAcg')
+        const s = htmlAcg.match(/var\s+vid="(https:\/\/[^"]+)"/)?.[1]
+        play.push(`第${n}集$${s}${urls.length === n ? '' : '\n'}`)
+      }
+      else {
+        play.push(`第${n}集$${http?.includes('mp4') ? http : `${http}@@mp4`}${urls.length === n ? '' : '\n'}`)
+      }
     }
+
+    console.log(play, 'play')
 
     await page.close()
     await browser.close()

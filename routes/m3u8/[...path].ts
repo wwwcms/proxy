@@ -34,12 +34,13 @@ export default defineEventHandler(async event => {
   }
 
   function ffzy2(ps: string[], i: number) {
-    if (ps[i].includes('6.600000') || ps[i].includes('5.800000') || ps[i].includes('4.666667')) {
+    if (ps[i].includes('6.600000') || ps[i].includes('5.800000') || ps[i].includes('4.666667') || ps[i].includes('5.466667')) {
       const t1 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.200000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.800000')
       const t2 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.400000')
       const t3 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('4.300000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.333333')
       const t4 = ps[i + 2].includes('5.433333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.900000') && ps[i + 8].includes('3.233333')
-      if (t1 || t2 || t3 || t4) {
+      const t5 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('6.666667') && ps[i + 8].includes('1.766667')
+      if (t1 || t2 || t3 || t4 || t5) {
         return true
       }
       return false

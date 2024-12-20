@@ -26,6 +26,8 @@ export default defineEventHandler(async event => {
       return [...prev, urli]
     }, [] as string[])
 
+    console.log('ok', playUrl)
+
     return playUrl
   }
   catch (e: any) {

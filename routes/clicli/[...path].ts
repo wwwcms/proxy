@@ -30,6 +30,8 @@ export default defineEventHandler(async event => {
         return `第${k + 1}集 ${removeDigitsInFirstTwoChars(l === 0 ? j[0] : video[0][k][0]).trim()}$${v}?filename=1.mp4\n`
       })
     })
+
+    console.log(videoList.map(item => item.length), 'videoList')
     return videoList
   }
   catch (e: any) {

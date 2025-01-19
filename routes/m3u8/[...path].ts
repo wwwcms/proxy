@@ -40,7 +40,8 @@ export default defineEventHandler(async event => {
       const t3 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('4.300000') && ps[i + 6].includes('3.333333') && ps[i + 8].includes('1.333333')
       const t4 = ps[i + 2].includes('5.433333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.900000') && ps[i + 8].includes('3.233333')
       const t5 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('6.666667') && ps[i + 8].includes('1.766667')
-      if (t1 || t2 || t3 || t4 || t5) {
+      const t6 = ps[i + 2].includes('3.333333') && ps[i + 4].includes('3.333333') && ps[i + 6].includes('3.933333') && ps[i + 8].includes('2.733333')
+      if (t1 || t2 || t3 || t4 || t5 || t6) {
         return true
       }
       return false

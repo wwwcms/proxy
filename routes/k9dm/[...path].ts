@@ -40,17 +40,15 @@ export default defineEventHandler(async event => {
       const $ = load(html)
       const src = $('#fed-play-iframe').attr('src')
       const h = src?.split('url=')
-      const http = h?.[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-fe.resso.me|sf16-sg-default.akamaized.net/, 'sf16-cgfe-sg.ibytedtos.com')
+      const http = h?.[1]?.replace(/sf16-sg.larksuitecdn.com|lf16-fe.resso.me|sf16-sg-default.akamaized.net/, 'sf-gs-frontend-sg.fanchenstatic.com')
       if (src?.includes('eacg')) {
         const html: any = await $fetch(`https://www.eacg1.com${src}`, {
           referrer: `https://www.eacg1.com${src}`
         })
         const iframeSrc = html.match(/https:\/\/xx\.cos1234\.com\/eacg\.php\?url=[^'"]+/)[0]
-        console.log(iframeSrc, 'iframeSrc')
         const htmlAcg: any = await $fetch(iframeSrc, {
           referrer: 'https://www.eacg1.com/'
         })
-        console.log(htmlAcg, 'htmlAcg')
         const s = htmlAcg.match(/var\s+vid="(https:\/\/[^"]+)"/)?.[1]
         play.push(`第${n}集$${s}${urls.length === n ? '' : '\n'}`)
       }

@@ -6,7 +6,7 @@ function transformUrl(url: string): string | null {
   const matches = url.match(regex)
   if (matches) {
     const pathWithId = matches[1] // 例如: tos-alisg-v-0051c001-sg/owmUpzRIRibiSEVEvCLOAMxGAvgGDDpjeGqGff
-    const newBaseUrl = 'https://sf16-cgfe-sg.ibytedtos.com/obj/'
+    const newBaseUrl = 'https://sf-gs-frontend-sg.fanchenstatic.com/obj/'
     const finalUrl = newBaseUrl + pathWithId
     return finalUrl
   }
@@ -15,6 +15,7 @@ function transformUrl(url: string): string | null {
 
 export default defineEventHandler(async event => {
   const query = getQuery(event)
+  const domain = 'mxdm9.cc'
   try {
     const { path: id } = event.context.params || {}
     const browser = await puppeteer.launch({ headless: true })
@@ -28,8 +29,9 @@ export default defineEventHandler(async event => {
     }
 
     if (id.includes('-')) {
-      await page.goto(`https://www.mxdm6.com/dongmanplay/${id}.html`, { waitUntil: 'networkidle0', timeout: 60000000 })
-      const html = await page.content()
+      // await page.goto(`https://www.mxdm6.com/dongmanplay/${id}.html`, { waitUntil: 'networkidle0', timeout: 60000000 })
+      // const html = await page.content()
+      const html: any = await $fetch(`https://www.${domain}/dongmanplay/${id}.html`)
       const match = /var player_aaaa=(\{[^}]+\})/.exec(html)
       const json = JSON.parse(match![1])
       const src = `https://danmu.yhdmjx.com/m3u8.php?url=${json.url}`
@@ -51,8 +53,9 @@ export default defineEventHandler(async event => {
       for await (const url of urls) {
         const u = url.split(/-|.html/)
         const n = +u[u.length - 2]
-        await page.goto(`https://www.mxdm6.com${url}`, { waitUntil: 'networkidle0', timeout: 60000000 })
-        const html = await page.content()
+        // await page.goto(`https://www.mxdm6.com${url}`, { waitUntil: 'networkidle0', timeout: 60000000 })
+        // const html = await page.content()
+        const html: any = await $fetch(`https://www.${domain}${url}`)
         const match = /var player_aaaa=(\{[^}]+\})/.exec(html)
         const json = JSON.parse(match![1])
         const src = `https://danmu.yhdmjx.com/m3u8.php?url=${json.url}`

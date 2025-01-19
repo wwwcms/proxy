@@ -7,6 +7,7 @@ export default defineEventHandler(async event => {
     const vip = query.vip
     if (id) {
       const ids = id.split('md')[1] || id
+      console.log(ids, 'ids')
       const response: any = await $fetch(`https://api.bilibili.com/pgc/review/user?media_id=${ids}`)
       seasonid = response.result.media.season_id
     }

@@ -18,7 +18,7 @@ export default defineEventHandler(async event => {
   // const query = getQuery(event)
   try {
     const { path: id } = event.context.params || {}
-    const html: any = await $fetch(`https://so.gushiwen.cn/${id}.aspx`)
+    const html: any = await $fetch(`https://www.gushiwen.cn/${id}.aspx`)
     const $ = load(html)
     const sons = $('.contyishang')
     const list = []
@@ -39,7 +39,7 @@ export default defineEventHandler(async event => {
       const fanyiShow = async (url: string) => {
         const { number, hex } = getParams(url)
         const name = url.includes('fanyi') ? 'fanyi' : 'shangxi'
-        const res: any = await $fetch(`https://so.gushiwen.cn/nocdn/ajax${name}.aspx?id=${number}&idjm=${hex}`)
+        const res: any = await $fetch(`https://www.gushiwen.cn/nocdn/ajax${name}.aspx?id=${number}&idjm=${hex}`)
         const $ = load(res)
         const conty = $('.contyishang')
         const title = conty.find('h2').text()
@@ -62,7 +62,6 @@ export default defineEventHandler(async event => {
       }
     }
 
-    console.log(list, 'list')
     return list
   }
   catch (e: any) {
